@@ -232,3 +232,6 @@ CVPR 2022. [[Paper](https://arxiv.org/abs/2110.02711)] \
 CLIP을 가지고 model을 finetuning해서 원하는 attribute로 변환하는 논문.
 
 ## Text-to-Image
+
+
+## 읽을것들
