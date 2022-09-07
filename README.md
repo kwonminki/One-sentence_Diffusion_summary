@@ -8,8 +8,11 @@ The repo for studying and sharing diffusion models with Korean.
   - [Introductory Videos](#introductory-videos)
 - [Papers](#papers)
   - [Vision](#vision)
+    - [Must-read papers](#must-read-papers)
+    - [Connection with other framworks](#connection-to-others)
     - [Image Generation](#image-generation)
-    - [Image-to-Image Translation](#image-to-image-translation)
+    - [Image space guidance sampling](#generative with conditioned images)
+    - [Classifier guidance sampling](#any papers with classifier guidance sampling)
     - [Image Editing](#image-editing)
     - [Text-to-Image](#text-to-image)
 
@@ -101,8 +104,86 @@ NeurIPS 2021. [[Paper](https://arxiv.org/abs/2107.00630)] [[Github](https://gith
 
 ### Image Generation
 
-### Image-to-Image Translation
+**Score-Based Generative Modeling with Critically-Damped Langevin Diffusion** \
+*Tim Dockhorn, Arash Vahdat, Karsten Kreis* \
+arXiv 2021. [[Paper](https://arxiv.org/abs/2112.07068)] [[Project](https://nv-tlabs.github.io/CLD-SGM/)] \
+14 Dec 2021 \
+Nvidia에서 낸 논문으로 기존에 Score-based에 velocity 축을 하나 더 만들어서 수렴도 잘 되고 학습도 빠르게 만듬. 수학적으로 잘 정리되어있어서 좋은 논문.
+
+**Cascaded Diffusion Models for High Fidelity Image Generation** \
+*Jonathan Ho<sup>1</sup>, Chitwan Saharia<sup>1</sup>, William Chan, David J. Fleet, Mohammad Norouzi, Tim Salimans* \
+arXiv 2021. [[Paper](https://arxiv.org/abs/2106.15282)] [[Project](https://cascaded-diffusion.github.io/)] \
+30 May 2021 \
+이미지 resolution을 키워가면서 생성하는 방법 소개.
+
+### Connection with other framworks
+
+**Diffusion Autoencoders: Toward a Meaningful and Decodable Representation** \
+*Konpat Preechakul, Nattanat Chatthee, Suttisak Wizadwongsa, Supasorn Suwajanakorn* \
+CVPR 2022. [[Paper](https://arxiv.org/abs/2111.15640)] [[Project](https://diff-ae.github.io/)] [[Github](https://github.com/phizaz/diffae)] \
+30 Dec 2021 \
+Diffusion models에 semantic latent를 컨디션으로 주어서 Autoencoder 처럼 만듬. 그래서 latent가 생겼고, manipulation이 가능해짐. 성능 좋고 잘됨.
+
+**DiffuseVAE: Efficient, Controllable and High-Fidelity Generation from Low-Dimensional Latents** \
+*Kushagra Pandey, Avideep Mukherjee, Piyush Rai, Abhishek Kumar* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2201.00308)] [[Github](https://github.com/kpandey008/DiffuseVAE)] \
+2 Jan 2022 \
+제대로 못읽었지만, VAE의 형태를 빌려와서 합친 논문.
+
+**High-Resolution Image Synthesis with Latent Diffusion Models** \
+*Robin Rombach<sup>1</sup>, Andreas Blattmann<sup>1</sup>, Dominik Lorenz, Patrick Esser, Björn Ommer* \
+arXiv 2021. [[Paper](https://arxiv.org/abs/2112.10752)] [[Github](https://github.com/CompVis/latent-diffusion)] \
+20 Dec 2021 \
+global AutoEncoder를 학습해서 그 latent 상에서 diffusion을 한 논문. stable-diffusion이 이 논문이다.
+
+**Score-based Generative Modeling in Latent Space** \
+*Arash Vahdat<sup>1</sup>, Karsten Kreis<sup>1</sup>, Jan Kautz* \
+arXiv 2021. [[Paper](https://arxiv.org/abs/2106.05931)] \
+10 Jun 2021
+VAE랑 합친 논문. VAE와 Diffusion을 동시에 학습. Diffusion은 VAE의 latent space에서 학습된다.
+
+
+### Image space guidance sampling
+
+**ILVR: Conditioning Method for Denoising Diffusion Probabilistic Models** \
+*Jooyoung Choi, Sungwon Kim, Yonghyun Jeong, Youngjune Gwon, Sungroh Yoon* \
+ICCV 2021 (Oral). [[Paper](https://arxiv.org/abs/2108.02938)] [[Github](https://github.com/jychoi118/ilvr_adm)] \
+6 Aug 2021 \
+이미지를 Low-pass filter 통과시킨 후 합쳐서 원하는 이미지랑 비슷한 이미지 생성
+
+**RePaint: Inpainting using Denoising Diffusion Probabilistic Models** \
+*Andreas Lugmayr, Martin Danelljan, Andres Romero, Fisher Yu, Radu Timofte, Luc Van Gool* \
+CVPR 2022. [[Paper](https://arxiv.org/abs/2201.09865)] [[Github](https://github.com/andreas128/RePaint)] \
+24 Jan 2022 \
+Inpainting 논문. 마스크된 영역만 바꿔껴주는 방식을 제안. 여러번 돌리는 방법만 주목해서 보면 됨. 나머진 그닥 필요 없음.
+
+**SDEdit: Image Synthesis and Editing with Stochastic Differential Equations**  \
+*Chenlin Meng, Yang Song, Jiaming Song, Jiajun Wu, Jun-Yan Zhu, Stefano Ermon* \
+ICLR 2022. [[Paper](https://arxiv.org/abs/2108.01073)] [[Project](https://sde-image-editing.github.io/)] [[Github](https://github.com/ermongroup/SDEdit)] \
+2 Aug 2021 \
+stroke를 노이즈를 적당히 씌웠다가 샘플링하면 비슷한 색의 real한 이미지를 얻을 수 있음.
+
+### Classifier guidance sampling
+
+**Classifier-Free Diffusion Guidance** \
+*Jonathan Ho, Tim Salimans* \
+NeurIPS Workshop 2021. [[Paper](https://arxiv.org/abs/2207.12598)] \
+28 Sep 2021 \
+엄밀히는 classifier guidance가 아니지만 학습할 때 서서히 fade out 하는 논문.
 
 ### Image Editing
+
+**Denoising Diffusion Restoration Models** \
+*Bahjat Kawar, Michael Elad, Stefano Ermon, Jiaming Song* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2201.11793)] \
+27 Jan 2022 \
+이미지 자체가 하자가 있다고 생각하고 특정 행렬 곱으로 노이즈나.. 크롭이나.. 그런걸 나타낼 수 있다면 원본을 복구하는 방식 제안.
+
+**Palette: Image-to-Image Diffusion Models** \
+*Chitwan Saharia, William Chan, Huiwen Chang, Chris A. Lee, Jonathan Ho, Tim Salimans, David J. Fleet, Mohammad Norouzi* \
+NeurlPS 2022. [[Paper](https://arxiv.org/abs/2111.05826)] \
+10 Nov 2021 \
+별거 안하고 그냥 튜닝해서 모델 하나로 4가지 task에서 SOTA 달성.
+
 
 ### Text-to-Image
