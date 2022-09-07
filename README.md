@@ -42,7 +42,7 @@ arXiv 2022. [[Paper](https://arxiv.org/abs/2208.11970)] \
 ## Introductory Videos
 *이상윤*\
 [[Youtube channel](https://www.youtube.com/channel/UC0xHseqVPJCGy1oNIfJA4VQ)] \
-디퓨전관련 스터디 영상을 업로드 해준 채널. 아쉽게도 2022.08 즈음부터 멈추긴 했지만 한국말 설명이라 찾아보면 좋음. \
+디퓨전관련 스터디 영상을 업로드 해준 채널. 아쉽게도 2022.08 즈음부터 멈추긴 했지만 한국말 설명이라 찾아보면 좋음.
 
 *디퓨전 전반적인 정리영상*\
 [[Youtube](https://youtu.be/uFoGaIVHfoE)] \
