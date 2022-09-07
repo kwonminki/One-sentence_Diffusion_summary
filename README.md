@@ -1,5 +1,6 @@
 # One-line_Diffusion_summary
-The repo for studying and sharing diffusion models with Korean.
+The repo for studying and sharing diffusion models with Korean. \
+Computer Vision with Diffusion models
 
 ## Contents
 - [Resources](#resources)
@@ -7,14 +8,13 @@ The repo for studying and sharing diffusion models with Korean.
   - [Introductory Papers](#introductory-papers)
   - [Introductory Videos](#introductory-videos)
 - [Papers](#papers)
-  - [Vision](#vision)
-    - [Must-read papers](#must-read-papers)
-    - [Connection with other framworks](#connection-with-other-framworks)
-    - [Image Generation](#image-generation)
-    - [Image space guidance sampling](#image-space-guidance-sampling)
-    - [Classifier guidance sampling](#classifier-guidance-sampling)
-    - [Image Editing](#image-editing)
-    - [Text-to-Image](#text-to-image)
+  - [Must-read papers](#must-read-papers)
+  - [Connection with other framworks](#connection-with-other-framworks)
+  - [Image Generation](#image-generation)
+  - [Image space guidance sampling](#image-space-guidance-sampling)
+  - [Classifier guidance sampling](#classifier-guidance-sampling)
+  - [Image Editing](#image-editing)
+  - [Text-to-Image](#text-to-image)
 
     
   
@@ -50,9 +50,8 @@ arXiv 2022. [[Paper](https://arxiv.org/abs/2208.11970)] \
 
 # Papers
 
-## Vision
 
-### Must-read papers
+## Must-read papers
 
 **Deep Unsupervised Learning using Nonequilibrium Thermodynamics** \
 *Jascha Sohl-Dickstein, Eric A. Weiss, Niru Maheswaranathan, Surya Ganguli* \
@@ -102,7 +101,7 @@ NeurIPS 2021. [[Paper](https://arxiv.org/abs/2107.00630)] [[Github](https://gith
 1 Jul 2021 \
 필수라고 적어놨지만 필자도 아직 안읽었습니다.. SNR을 정의 내린 논문. 그리고 수식적으로 잘 정리된 논문. 조만간 읽고 업데이트 하겠습니다.
 
-### Image Generation
+## Image Generation
 
 **Score-Based Generative Modeling with Critically-Damped Langevin Diffusion** \
 *Tim Dockhorn, Arash Vahdat, Karsten Kreis* \
@@ -116,7 +115,7 @@ arXiv 2021. [[Paper](https://arxiv.org/abs/2106.15282)] [[Project](https://casca
 30 May 2021 \
 이미지 resolution을 키워가면서 생성하는 방법 소개.
 
-### Connection with other framworks
+## Connection with other framworks
 
 **Diffusion Autoencoders: Toward a Meaningful and Decodable Representation** \
 *Konpat Preechakul, Nattanat Chatthee, Suttisak Wizadwongsa, Supasorn Suwajanakorn* \
@@ -143,7 +142,7 @@ arXiv 2021. [[Paper](https://arxiv.org/abs/2106.05931)] \
 VAE랑 합친 논문. VAE와 Diffusion을 동시에 학습. Diffusion은 VAE의 latent space에서 학습된다.
 
 
-### Image space guidance sampling
+## Image space guidance sampling
 
 **ILVR: Conditioning Method for Denoising Diffusion Probabilistic Models** \
 *Jooyoung Choi, Sungwon Kim, Yonghyun Jeong, Youngjune Gwon, Sungroh Yoon* \
@@ -163,7 +162,7 @@ ICLR 2022. [[Paper](https://arxiv.org/abs/2108.01073)] [[Project](https://sde-im
 2 Aug 2021 \
 stroke를 노이즈를 적당히 씌웠다가 샘플링하면 비슷한 색의 real한 이미지를 얻을 수 있음.
 
-### Classifier guidance sampling
+## Classifier guidance sampling
 
 **Classifier-Free Diffusion Guidance** \
 *Jonathan Ho, Tim Salimans* \
@@ -171,7 +170,7 @@ NeurIPS Workshop 2021. [[Paper](https://arxiv.org/abs/2207.12598)] \
 28 Sep 2021 \
 엄밀히는 classifier guidance가 아니지만 학습할 때 서서히 fade out 하는 논문.
 
-### Image Editing
+## Image Editing
 
 **Denoising Diffusion Restoration Models** \
 *Bahjat Kawar, Michael Elad, Stefano Ermon, Jiaming Song* \
@@ -186,4 +185,4 @@ NeurlPS 2022. [[Paper](https://arxiv.org/abs/2111.05826)] \
 별거 안하고 그냥 튜닝해서 모델 하나로 4가지 task에서 SOTA 달성.
 
 
-### Text-to-Image
+## Text-to-Image
