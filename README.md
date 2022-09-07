@@ -101,6 +101,12 @@ NeurIPS 2021. [[Paper](https://arxiv.org/abs/2107.00630)] [[Github](https://gith
 1 Jul 2021 \
 필수라고 적어놨지만 필자도 아직 안읽었습니다.. SNR을 정의 내린 논문. 그리고 수식적으로 잘 정리된 논문. 조만간 읽고 업데이트 하겠습니다.
 
+**Elucidating the Design Space of Diffusion-Based Generative Models** \
+*Tero Karras, Miika Aittala, Timo Aila, Samuli Laine* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2206.00364)] \
+1 Jun 2022 \
+실험적으로 Diffusion model을 어떻게 설계하는 것이 좋은지 잘 정리해놓은 논문.
+
 ## Image Generation
 
 **Score-Based Generative Modeling with Critically-Damped Langevin Diffusion** \
@@ -114,6 +120,18 @@ Nvidia에서 낸 논문으로 기존에 Score-based에 velocity 축을 하나 �
 arXiv 2021. [[Paper](https://arxiv.org/abs/2106.15282)] [[Project](https://cascaded-diffusion.github.io/)] \
 30 May 2021 \
 이미지 resolution을 키워가면서 생성하는 방법 소개.
+
+**Soft Truncation: A Universal Training Technique of Score-based Diffusion Model for High Precision Score Estimation**\
+*Dongjun Kim, Seungjae Shin, Kyungwoo Song, Wanmo Kang, Il-Chul Moon*\
+icml 2022. [[Paper](https://arxiv.org/abs/2106.05527)] \
+11 Jun 2022 \
+이미지를 좀 더 잘 뽑아내는 방법 소개.
+
+**Your ViT is Secretly a Hybrid Discriminative-Generative Diffusion Model** \
+*Xiulong Yang<sup>1</sup>, Sheng-Min Shih<sup>1</sup>, Yinlin Fu, Xiaoting Zhao, Shihao Ji* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2208.07791)] [[Github](https://github.com/sndnyang/Diffusion_ViT)] \
+16 Aug 2022 \
+ViT를 가지고 Diffusion을 만들었지만 classification도 같이 한다는 것이 중요포인트. 그러나 이미지 생성 성능은 그리 좋지 못함. 다만 기존 하이브리드모델 중에선 제일 좋은듯.
 
 ## Connection with other framworks
 
@@ -141,6 +159,11 @@ arXiv 2021. [[Paper](https://arxiv.org/abs/2106.05931)] \
 10 Jun 2021
 VAE랑 합친 논문. VAE와 Diffusion을 동시에 학습. Diffusion은 VAE의 latent space에서 학습된다.
 
+**Tackling the Generative Learning Trilemma with Denoising Diffusion GANs** \
+*Zhisheng Xiao, Karsten Kreis, Arash Vahdat* \
+ICLR 2022 (Spotlight). [[Paper](https://arxiv.org/abs/2112.07804)] [[Project](https://nvlabs.github.io/denoising-diffusion-gan)] \
+15 Dec 2021 \
+GAN으로 특정 timestep의 이미지를 생성하는 방법으로 샘플링도 빠르게, 퀄리티도 좋게 함. GAN+Diffusion.
 
 ## Image space guidance sampling
 
@@ -170,6 +193,24 @@ NeurIPS Workshop 2021. [[Paper](https://arxiv.org/abs/2207.12598)] \
 28 Sep 2021 \
 엄밀히는 classifier guidance가 아니지만 학습할 때 서서히 fade out 하는 논문.
 
+**Blended Diffusion for Text-driven Editing of Natural Images** \
+*Omri Avrahami, Dani Lischinski, Ohad Fried* \
+CVPR 2022. [[Paper](https://arxiv.org/abs/2111.14818)] [[Project](https://omriavrahami.com/blended-diffusion-page/)] [[Github](https://github.com/omriav/blended-diffusion)] \
+29 Nov 2021 \
+특정 영역에만 CLIP을 가지고 classifier guidance로 text prompt에 맞게 이미지 생성.
+
+**More Control for Free! Image Synthesis with Semantic Diffusion Guidance** \
+*Xihui Liu, Dong Huk Park, Samaneh Azadi, Gong Zhang, Arman Chopikyan, Yuxiao Hu, Humphrey Shi, Anna Rohrbach, Trevor Darrell* \
+arXiv 2021. [[Paper](https://arxiv.org/abs/2112.05744)] [[Github](https://xh-liu.github.io/sdg/)] \
+10 Dec 2021 \
+처음으로 text와 image guidance를 둘 다 줄 수 있다고 설명하는 논문. 그런데 둘 다 CLIP을 사용한 classifier guidance이다.
+
+**Generating High Fidelity Data from Low-density Regions using Diffusion Models** \
+*Vikash Sehwag, Caner Hazirbas, Albert Gordo, Firat Ozgenel, Cristian Canton Ferrer* \
+CVPR2022, arXiv 2022. [[Paper](https://arxiv.org/abs/2203.17260)] \
+31 Mar 2022 \
+GAN처럼 Discriminator를 하나 사용해서 확률이 낮은 이미지를 뽑도록 유도. Low-density 이미지를 생성함.
+
 ## Image Editing
 
 **Denoising Diffusion Restoration Models** \
@@ -184,5 +225,10 @@ NeurlPS 2022. [[Paper](https://arxiv.org/abs/2111.05826)] \
 10 Nov 2021 \
 별거 안하고 그냥 튜닝해서 모델 하나로 4가지 task에서 SOTA 달성.
 
+**DiffusionCLIP: Text-guided Image Manipulation Using Diffusion Models** \
+*Gwanghyun Kim, Jong Chul Ye* \
+CVPR 2022. [[Paper](https://arxiv.org/abs/2110.02711)] \
+6 Oct 2021 \
+CLIP을 가지고 model을 finetuning해서 원하는 attribute로 변환하는 논문.
 
 ## Text-to-Image
