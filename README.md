@@ -57,6 +57,12 @@ arXiv 2022. [[Paper](https://arxiv.org/abs/2208.11970)] \
 25 Aug 2022 \
 기존 Diffusion 논문들의 notation이 다 달라서 힘든데, 이 논문이 전체적인 정리를 싹 다 해놓음. 구글에서 썼고, VAE에서 부터 classifier guidance까지 수식적으로도 총정리 해둠. 수학 증명이 안되는 부분이 있다면 참고하기 좋음.
 
+**A Survey on Generative Diffusion Model** \
+*Hanqun Cao, Cheng Tan, Zhangyang Gao, Guangyong Chen, Pheng-Ann Heng, Stan Z. Li* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2209.02646)] \
+6 Sep 2022 \
+Survey.
+
 ## Introductory Videos
 *이상윤*\
 [[Youtube channel](https://www.youtube.com/channel/UC0xHseqVPJCGy1oNIfJA4VQ)] \
