@@ -2,6 +2,21 @@
 The repo for studying and sharing diffusion models. (Korean) \
 Computer Vision with Diffusion models
 
+## New updated
+
+<details>
+  <summary>Click me</summary>
+
+  ### 07 Sept 2022 updated
+  **Your ViT is Secretly a Hybrid Discriminative-Generative Diffusion Model** \
+  *Xiulong Yang<sup>1</sup>, Sheng-Min Shih<sup>1</sup>, Yinlin Fu, Xiaoting Zhao, Shihao Ji* \
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2208.07791)] [[Github](https://github.com/sndnyang/Diffusion_ViT)] \
+  16 Aug 2022 \
+  ViT를 가지고 Diffusion을 만들었지만 classification도 같이 한다는 것이 중요포인트. 그러나 이미지 생성 성능은 그리 좋지 못함. 다만 기존 하이브리드모델 중에선 제일 좋은듯.
+
+</details>
+
+
 ## Contents
 - [Resources](#resources)
   - [Introductory Posts](#introductory-posts)
