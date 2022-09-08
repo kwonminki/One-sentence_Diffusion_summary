@@ -10,7 +10,14 @@ Computer Vision with Diffusion models
 <details>
   <summary>In the last month</summary>
 
-  ### 07 Sept 2022 updated
+  ### 08 Sep 2022
+  **A Survey on Generative Diffusion Model** \
+  *Hanqun Cao, Cheng Tan, Zhangyang Gao, Guangyong Chen, Pheng-Ann Heng, Stan Z. Li* \
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2209.02646)] \
+  6 Sep 2022 \
+  Survey.
+  
+  ### 07 Sep 2022
   **Your ViT is Secretly a Hybrid Discriminative-Generative Diffusion Model** \
   *Xiulong Yang<sup>1</sup>, Sheng-Min Shih<sup>1</sup>, Yinlin Fu, Xiaoting Zhao, Shihao Ji* \
   arXiv 2022. [[Paper](https://arxiv.org/abs/2208.07791)] [[Github](https://github.com/sndnyang/Diffusion_ViT)] \
