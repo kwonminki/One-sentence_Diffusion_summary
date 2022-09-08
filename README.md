@@ -5,7 +5,7 @@ Computer Vision with Diffusion models
 ## New updated
 
 <details>
-  <summary>Click me</summary>
+  <summary>In the last month</summary>
 
   ### 07 Sept 2022 updated
   **Your ViT is Secretly a Hybrid Discriminative-Generative Diffusion Model** \
