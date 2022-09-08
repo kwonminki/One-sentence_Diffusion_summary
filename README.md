@@ -1,5 +1,5 @@
 # One-line_Diffusion_summary
-The repo for studying and sharing diffusion models with Korean. \
+The repo for studying and sharing diffusion models. (Korean) \
 Computer Vision with Diffusion models
 
 ## Contents
