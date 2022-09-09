@@ -40,6 +40,7 @@ Computer Vision with Diffusion models
   - [Classifier guidance sampling](#classifier-guidance-sampling)
   - [Image Editing](#image-editing)
   - [Text-to-Image](#text-to-image)
+  - [Fast Sampling](#fast-sampling)
 
     
   
