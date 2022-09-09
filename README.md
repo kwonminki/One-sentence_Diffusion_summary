@@ -9,7 +9,24 @@ Computer Vision with Diffusion models
 
 <details>
   <summary>In the last month</summary>
-
+  
+  
+  
+  ### 09 Sep 2022
+  **Learning Fast Samplers for Diffusion Models by Differentiating Through Sample Quality** \
+  *Daniel Watson, William Chan, Jonathan Ho, Mohammad Norouzi* \
+  ICLR 2022. [[Paper](https://openreview.net/forum?id=VFBjuF8HEp)]  \
+  11 Feb 2022 \
+  Pre-trained을 fine-tunning 하지 않고 step#를 줄여서 빠르게 sampling 하면서도 FID/IS 를 최대한 유지할 수 있는 방법제시,
+  diffusion의 object function(ELBO) term을 무시하고, step과 step사이에 sampling하는 paremeter들만 KID loss 를 줘서 train.
+  
+  **Progressive Deblurring of Diffusion Models for Coarse-to-Fine Image Synthesis, Sangyun Lee et al., 2022** \
+  *Sangyun Lee, Hyungjin Chung, Jaehyeon Kim, Jong Chul Ye* \
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2207.11192?context=cs)] [[Project](https://github.com/sangyun884/blur-diffusion)] \
+  16 Jul 2022 \
+  상윤좌의 논문으로, diffusion models의 generation과정이 coarse-to-fine이 아니라 holistically 생성되는것에 주목하여 이를 해결하고자 blur kernel을 삽입하여 train.
+  Noise에 가까울 수록 low frequency 정보만 남도록 gaussian kernel 통과시키고, 결과적으로 low freqeucny(content)정보부터 미리 생성하고, high freqeuncy(style, detail)을 나중에   생성하도록 explicit bias를 줌.
+  
   ### 08 Sep 2022
   **A Survey on Generative Diffusion Model** \
   *Hanqun Cao, Cheng Tan, Zhangyang Gao, Guangyong Chen, Pheng-Ann Heng, Stan Z. Li* \
@@ -170,7 +187,7 @@ ViT를 가지고 Diffusion을 만들었지만 classification도 같이 한다는
 arXiv 2022. [[Paper](https://arxiv.org/abs/2207.11192?context=cs)] [[Project](https://github.com/sangyun884/blur-diffusion)] \
 16 Jul 2022 \
 상윤좌의 논문으로, diffusion models의 generation과정이 coarse-to-fine이 아니라 holistically 생성되는것에 주목하여 이를 해결하고자 blur kernel을 삽입하여 train.
-Noise에 가까울 수록 low frequency 정보만 남도록 gaussian kernel 통과시키고, 결과적으로 low freqeucny(content)정보부터 미리 생성하고, high freqeuncy(style, detail)을 나중에 생성하도록 explicit bias를
+Noise에 가까울 수록 low frequency 정보만 남도록 gaussian kernel 통과시키고, 결과적으로 low freqeucny(content)정보부터 미리 생성하고, high freqeuncy(style, detail)을 나중에 생성하도록 explicit bias를 줌.
 
 ## Connection with other framworks
 
