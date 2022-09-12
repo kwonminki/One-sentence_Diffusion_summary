@@ -10,7 +10,12 @@ Computer Vision with Diffusion models
 <details>
   <summary>In the last month</summary>
   
-  
+  ### 12 Sep 2022
+  **Diffusion Models: A Comprehensive Survey of Methods and Applications** \
+  *Ling Yang, Zhilong Zhang, Shenda Hong, Wentao Zhang, Bin Cui* \
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2209.00796)] \
+  9 Sep 2022 \
+  Survey.
   
   ### 09 Sep 2022
   **Learning Fast Samplers for Diffusion Models by Differentiating Through Sample Quality** \
@@ -86,6 +91,12 @@ arXiv 2022. [[Paper](https://arxiv.org/abs/2208.11970)] \
 *Hanqun Cao, Cheng Tan, Zhangyang Gao, Guangyong Chen, Pheng-Ann Heng, Stan Z. Li* \
 arXiv 2022. [[Paper](https://arxiv.org/abs/2209.02646)] \
 6 Sep 2022 \
+Survey.
+
+**Diffusion Models: A Comprehensive Survey of Methods and Applications** \
+*Ling Yang, Zhilong Zhang, Shenda Hong, Wentao Zhang, Bin Cui* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2209.00796)] \
+9 Sep 2022 \
 Survey.
 
 ## Introductory Videos
