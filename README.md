@@ -311,3 +311,9 @@ Pre-trained을 fine-tunning 하지 않고 step#를 줄여서 빠르게 sampling 
 diffusion의 object function(ELBO) term을 무시하고, step과 step사이에 sampling하는 paremeter들만 KID loss 를 줘서 train.
 
 ## 읽을것들
+
+**Soft Diffusion: Score Matching for General Corruptions** \
+*Giannis Daras, Mauricio Delbracio, Hossein Talebi, Alexandros G. Dimakis, Peyman Milanfar* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2209.05442)] \
+12 Sep 2022 \
+blur써 Sota (안읽음)
