@@ -10,6 +10,13 @@ Computer Vision with Diffusion models
 <details>
   <summary>In the last month</summary>
   
+  ### 16 Sep 2022
+  **Soft Diffusion: Score Matching for General Corruptions, Giannis Daras et al., 2022**  \
+  *Giannis Daras, Mauricio Delbracio, Hossein Talebi, Alexandros G. Dimakis, Peyman Milanfar* \
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2209.05442)] \
+  12 Sep 2022 \
+  gaussian noise말고 blur까지 씌우면 fid가 더 좋아진다 + new sampling method (momentum sampling)제안, noise(blur) scheduling 제안\
+  
   ### 12 Sep 2022
   **Diffusion Models: A Comprehensive Survey of Methods and Applications** \
   *Ling Yang, Zhilong Zhang, Shenda Hong, Wentao Zhang, Bin Cui* \
@@ -199,6 +206,13 @@ arXiv 2022. [[Paper](https://arxiv.org/abs/2207.11192?context=cs)] [[Project](ht
 16 Jul 2022 \
 상윤좌의 논문으로, diffusion models의 generation과정이 coarse-to-fine이 아니라 holistically 생성되는것에 주목하여 이를 해결하고자 blur kernel을 삽입하여 train.
 Noise에 가까울 수록 low frequency 정보만 남도록 gaussian kernel 통과시키고, 결과적으로 low freqeucny(content)정보부터 미리 생성하고, high freqeuncy(style, detail)을 나중에 생성하도록 explicit bias를 줌.
+
+**Soft Diffusion: Score Matching for General Corruptions, Giannis Daras et al., 2022**  \
+*Giannis Daras, Mauricio Delbracio, Hossein Talebi, Alexandros G. Dimakis, Peyman Milanfar* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2209.05442)] \
+12 Sep 2022 \
+gaussian noise말고 blur까지 씌우면 fid가 더 좋아진다 + new sampling method (momentum sampling)제안, noise(blur) scheduling 제안\
+
 
 ## Connection with other framworks
 
