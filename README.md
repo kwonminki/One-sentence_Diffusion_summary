@@ -10,6 +10,13 @@ Computer Vision with Diffusion models
 <details>
   <summary>In the last month</summary>
   
+  ### 10 Oct 2022
+  **TEXT-GUIDED DIFFUSION IMAGE STYLE TRANSFER WITH CONTRASTIVE LOSS FINE-TUNING** \
+  *Anonymous authors* \
+  Submitted to ICLR2023. [[Paper](https://openreview.net/forum?id=iJ_E0ZCy8fi)] \
+  30 Sept 2022 \
+  CLIP (global + directional) & CUT loss (UNet featuremap들을 패치로 쪼개서 contrastive loss)를 사용해서 stylestransfer.
+  
   ### 16 Sep 2022
   **Soft Diffusion: Score Matching for General Corruptions, Giannis Daras et al., 2022**  \
   *Giannis Daras, Mauricio Delbracio, Hossein Talebi, Alexandros G. Dimakis, Peyman Milanfar* \
@@ -39,19 +46,6 @@ Computer Vision with Diffusion models
   상윤좌의 논문으로, diffusion models의 generation과정이 coarse-to-fine이 아니라 holistically 생성되는것에 주목하여 이를 해결하고자 blur kernel을 삽입하여 train.
   Noise에 가까울 수록 low frequency 정보만 남도록 gaussian kernel 통과시키고, 결과적으로 low freqeucny(content)정보부터 미리 생성하고, high freqeuncy(style, detail)을 나중에   생성하도록 explicit bias를 줌.
   
-  ### 08 Sep 2022
-  **A Survey on Generative Diffusion Model** \
-  *Hanqun Cao, Cheng Tan, Zhangyang Gao, Guangyong Chen, Pheng-Ann Heng, Stan Z. Li* \
-  arXiv 2022. [[Paper](https://arxiv.org/abs/2209.02646)] \
-  6 Sep 2022 \
-  Survey.
-  
-  ### 07 Sep 2022
-  **Your ViT is Secretly a Hybrid Discriminative-Generative Diffusion Model** \
-  *Xiulong Yang<sup>1</sup>, Sheng-Min Shih<sup>1</sup>, Yinlin Fu, Xiaoting Zhao, Shihao Ji* \
-  arXiv 2022. [[Paper](https://arxiv.org/abs/2208.07791)] [[Github](https://github.com/sndnyang/Diffusion_ViT)] \
-  16 Aug 2022 \
-  ViT를 가지고 Diffusion을 만들었지만 classification도 같이 한다는 것이 중요포인트. 그러나 이미지 생성 성능은 그리 좋지 못함. 다만 기존 하이브리드모델 중에선 제일 좋은듯.
 
 </details>
 
@@ -311,6 +305,12 @@ NeurlPS 2022. [[Paper](https://arxiv.org/abs/2111.05826)] \
 CVPR 2022. [[Paper](https://arxiv.org/abs/2110.02711)] \
 6 Oct 2021 \
 CLIP을 가지고 model을 finetuning해서 원하는 attribute로 변환하는 논문.
+
+**TEXT-GUIDED DIFFUSION IMAGE STYLE TRANSFER WITH CONTRASTIVE LOSS FINE-TUNING** \
+*Anonymous authors* \
+Submitted to ICLR2023. [[Paper](https://openreview.net/forum?id=iJ_E0ZCy8fi)] \
+30 Sept 2022 \
+CLIP (global + directional) & CUT loss (UNet featuremap들을 패치로 쪼개서 contrastive loss)를 사용해서 stylestransfer.
 
 ## Text-to-Image
 
