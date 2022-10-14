@@ -64,7 +64,7 @@ Computer Vision with Diffusion models
   - [Image Editing](#image-editing)
   - [Text-to-Image](#text-to-image)
   - [Fast Sampling](#fast-sampling)
-
+  - [Video Generation](#video-generation)
     
   
 # Resources
