@@ -10,6 +10,13 @@ Computer Vision with Diffusion models
 <details>
   <summary>In the last month</summary>
   
+  ### 14 Oct 2022
+  **Video Diffusion Models** \
+  *Jonathan Ho, Tim Salimans, Alexey Gritsenko, William Chan, Mohammad Norouzi, David Fleet* \
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2204.03458)] \
+  7 Aprill 2022 \
+  Diffusion을 이용한 Video generation을 처음으로 한 논문, Video의 길이를 늘리고, quality를 높이는 것에 대한 방법제시.
+
   ### 10 Oct 2022
   **TEXT-GUIDED DIFFUSION IMAGE STYLE TRANSFER WITH CONTRASTIVE LOSS FINE-TUNING** \
   *Anonymous authors* \
@@ -328,7 +335,7 @@ diffusion의 object function(ELBO) term을 무시하고, step과 step사이에 s
 ## Video Generation
 
 **Video Diffusion Models** \
-*Jonathan Ho Tim Salimans Alexey Gritsenko William Chan Mohammad Norouzi David Fleet* \
+*Jonathan Ho, Tim Salimans, Alexey Gritsenko, William Chan, Mohammad Norouzi, David Fleet* \
 arXiv 2022. [[Paper](https://arxiv.org/abs/2204.03458)] \
 7 Aprill 2022 \
 Diffusion을 이용한 Video generation을 처음으로 한 논문, Video의 길이를 늘리고, quality를 높이는 것에 대한 방법제시.
