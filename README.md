@@ -324,6 +324,15 @@ ICLR 2022. [[Paper](https://openreview.net/forum?id=VFBjuF8HEp)]  \
 Pre-trained을 fine-tunning 하지 않고 step#를 줄여서 빠르게 sampling 하면서도 FID/IS 를 최대한 유지할 수 있는 방법제시,
 diffusion의 object function(ELBO) term을 무시하고, step과 step사이에 sampling하는 paremeter들만 KID loss 를 줘서 train.
 
+
+## Video Generation
+
+**Video Diffusion Models** \
+*Jonathan Ho Tim Salimans Alexey Gritsenko William Chan Mohammad Norouzi David Fleet* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2204.03458)] \
+7 Aprill 2022 \
+Diffusion을 이용한 Video generation을 처음으로 한 논문, Video의 길이를 늘리고, quality를 높이는 것에 대한 방법제시.
+
 ## 읽을것들
 
 **Soft Diffusion: Score Matching for General Corruptions** \
