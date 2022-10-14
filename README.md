@@ -16,6 +16,14 @@ Computer Vision with Diffusion models
   arXiv 2022. [[Paper](https://arxiv.org/abs/2204.03458)] \
   7 Aprill 2022 \
   Diffusion을 이용한 Video generation을 처음으로 한 논문, Video의 길이를 늘리고, quality를 높이는 것에 대한 방법제시.
+  
+  **Pseudo Numerical Methods for Diffusion Models on Manifolds** \
+  *Luping Liu, Yi Ren, Zhijie Lin, Zhou Zhao* \
+  ICLR 2022 Poster [[Paper](https://arxiv.org/abs/2202.09778)] \
+  Submitted on 20 Feb 2022  \
+  이전 numerical ODE의 방식이 DDPM의 sampling manifold를 제대로 반영하지 못함을 지적, DDIM과 high-order numerical sampling의 장점을 결합하여 새로운 sampling 방식을 제시.
+  stable diffusion에서 사용된 sampling방식이고 성능이 좋다.
+  
 
   ### 10 Oct 2022
   **TEXT-GUIDED DIFFUSION IMAGE STYLE TRANSFER WITH CONTRASTIVE LOSS FINE-TUNING** \
@@ -330,6 +338,13 @@ ICLR 2022. [[Paper](https://openreview.net/forum?id=VFBjuF8HEp)]  \
 11 Feb 2022 \
 Pre-trained을 fine-tunning 하지 않고 step#를 줄여서 빠르게 sampling 하면서도 FID/IS 를 최대한 유지할 수 있는 방법제시,
 diffusion의 object function(ELBO) term을 무시하고, step과 step사이에 sampling하는 paremeter들만 KID loss 를 줘서 train.
+
+**Pseudo Numerical Methods for Diffusion Models on Manifolds** \
+*Luping Liu, Yi Ren, Zhijie Lin, Zhou Zhao* \
+ICLR 2022 Poster [[Paper](https://arxiv.org/abs/2202.09778)] \
+Submitted on 20 Feb 2022  \
+이전 numerical ODE의 방식이 DDPM의 sampling manifold를 제대로 반영하지 못함을 지적, DDIM과 high-order numerical sampling의 장점을 결합하여 새로운 sampling 방식을 제시.
+stable diffusion에서 사용된 sampling방식이고 성능이 좋다.
 
 
 ## Video Generation
