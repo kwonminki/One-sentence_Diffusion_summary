@@ -3,7 +3,10 @@
 
 # One-Sentence_Diffusion_summary
 The repo for studying and sharing diffusion models. (Korean) \
-Computer Vision with Diffusion models
+Computer Vision with Diffusion models \
+
+Update 알람용 디스코드 (업데이트되면 메세지가 날아옵니다.)
+Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 
 ## New updated
 
