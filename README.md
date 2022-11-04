@@ -10,6 +10,14 @@ Computer Vision with Diffusion models
 <details>
   <summary>In the last month</summary>
   
+  ### 4 Nov 2022
+  **gDDIM: Generalized denoising diffusion implicit models** \
+  *Qinsheng Zhang, Molei Tao, Yongxin Chen* \
+  ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2206.05564)] \
+  [Submitted on 11 Jun 2022] \
+  DDPM, DDIM, 등등을 모두 SDE의 형태로 전환, Blur Diffusion이나 Critically-Damped Langevin Diffusion 까지도 SDE로 표현한 뒤, general한 form의 SDE -> DDIM을 만드는 방법을 제안한다. 이를 통해 istropic diffusion models까지 DDIM으로 fast sampling 가능하게 함. 
+  
+  
   ### 14 Oct 2022
   **Video Diffusion Models** \
   *Jonathan Ho, Tim Salimans, Alexey Gritsenko, William Chan, Mohammad Norouzi, David Fleet* \
@@ -38,28 +46,6 @@ Computer Vision with Diffusion models
   arXiv 2022. [[Paper](https://arxiv.org/abs/2209.05442)] \
   12 Sep 2022 \
   gaussian noise말고 blur까지 씌우면 fid가 더 좋아진다 + new sampling method (momentum sampling)제안, noise(blur) scheduling 제안\
-  
-  ### 12 Sep 2022
-  **Diffusion Models: A Comprehensive Survey of Methods and Applications** \
-  *Ling Yang, Zhilong Zhang, Shenda Hong, Wentao Zhang, Bin Cui* \
-  arXiv 2022. [[Paper](https://arxiv.org/abs/2209.00796)] \
-  9 Sep 2022 \
-  Survey.
-  
-  ### 09 Sep 2022
-  **Learning Fast Samplers for Diffusion Models by Differentiating Through Sample Quality** \
-  *Daniel Watson, William Chan, Jonathan Ho, Mohammad Norouzi* \
-  ICLR 2022. [[Paper](https://openreview.net/forum?id=VFBjuF8HEp)]  \
-  11 Feb 2022 \
-  Pre-trained을 fine-tunning 하지 않고 step#를 줄여서 빠르게 sampling 하면서도 FID/IS 를 최대한 유지할 수 있는 방법제시,
-  diffusion의 object function(ELBO) term을 무시하고, step과 step사이에 sampling하는 paremeter들만 KID loss 를 줘서 train.
-  
-  **Progressive Deblurring of Diffusion Models for Coarse-to-Fine Image Synthesis, Sangyun Lee et al., 2022** \
-  *Sangyun Lee, Hyungjin Chung, Jaehyeon Kim, Jong Chul Ye* \
-  arXiv 2022. [[Paper](https://arxiv.org/abs/2207.11192?context=cs)] [[Project](https://github.com/sangyun884/blur-diffusion)] \
-  16 Jul 2022 \
-  상윤좌의 논문으로, diffusion models의 generation과정이 coarse-to-fine이 아니라 holistically 생성되는것에 주목하여 이를 해결하고자 blur kernel을 삽입하여 train.
-  Noise에 가까울 수록 low frequency 정보만 남도록 gaussian kernel 통과시키고, 결과적으로 low freqeucny(content)정보부터 미리 생성하고, high freqeuncy(style, detail)을 나중에   생성하도록 explicit bias를 줌.
   
 
 </details>
@@ -345,6 +331,12 @@ ICLR 2022 Poster [[Paper](https://arxiv.org/abs/2202.09778)] \
 Submitted on 20 Feb 2022  \
 이전 numerical ODE의 방식이 DDPM의 sampling manifold를 제대로 반영하지 못함을 지적, DDIM과 high-order numerical sampling의 장점을 결합하여 새로운 sampling 방식을 제시.
 stable diffusion에서 사용된 sampling방식이고 성능이 좋다.
+
+**gDDIM: Generalized denoising diffusion implicit models** \
+*Qinsheng Zhang, Molei Tao, Yongxin Chen* \
+ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2206.05564)] \
+[Submitted on 11 Jun 2022] \
+DDPM, DDIM, 등등을 모두 SDE의 형태로 전환, Blur Diffusion이나 Critically-Damped Langevin Diffusion 까지도 SDE로 표현한 뒤, general한 form의 SDE -> DDIM을 만드는 방법을 제안한다. 이를 통해 istropic diffusion models까지 DDIM으로 fast sampling 가능하게 함. 
 
 
 ## Video Generation
