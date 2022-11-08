@@ -290,8 +290,8 @@ CVPR2022, arXiv 2022. [[Paper](https://arxiv.org/abs/2203.17260)] \
 31 Mar 2022 \
 GAN처럼 Discriminator를 하나 사용해서 확률이 낮은 이미지를 뽑도록 유도. Low-density 이미지를 생성함.
 
-**Self-Guided DIffusion Models**
-*Vincent Tao Hu, David W.Zhang, Yuki M.Asano, Gertjan J. Burghouts, Cees G. M. Snoek*
+**Self-Guided DIffusion Models** \
+*Vincent Tao Hu, David W.Zhang, Yuki M.Asano, Gertjan J. Burghouts, Cees G. M. Snoek* \
 arXiv 2022. [[Paper](https://arxiv.org/abs/2210.06462)] \
 12 Oct 2022 \
 Off-the-shelf model들의 사용으로 feature를 뽑아내고 클러스터링을 활용한 self-guided label -> classifier, object detection, semantic segmentation 등으로 guidance를 주어 그에 따르 이미지생성 (시간이 오래 걸릴듯, high resolution 어렵다는 단점)
