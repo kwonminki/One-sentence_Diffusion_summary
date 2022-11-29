@@ -3,15 +3,29 @@
 
 # One-Sentence_Diffusion_summary
 The repo for studying and sharing diffusion models. (Korean) \
-Computer Vision with Diffusion models \
+Computer Vision with Diffusion models
 
-Update 알람용 디스코드 (업데이트되면 메세지가 날아옵니다.)
+Update 알람용 디스코드 (업데이트되면 메세지가 날아옵니다.) \
 Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 
 ## New updated
 
 <details>
   <summary>In the last month</summary>
+  
+  ### 29 Nov 2022
+  **Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation** \
+  *Narek Tumanyan, Michal Geyer, Shai Bagon, Tali Dekel* \
+  CVPR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2211.12572)] [[Project page](https://pnp-diffusion.github.io)]  \
+  [Submitted on 22 Nov 2022] \
+  Stable Diffusion의 4th layer의 featuremap과 4-11th laeyr의 self attention Q,K 값을 injection 하여 real image의 structure를 유지하면서 text guided로 I2I translation을 가능하게 함. Diffusion model은 freeze, feature만 만져서 성공적으로 editing. 좋은 접근.
+  
+  **Diffusion Models already have a Semantic Latent Space** \
+  *Mingi Kwon, Jaeseok Jeong, Youngjung Uh* \
+  ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2210.10960)] [[Project page](https://kwonminki.github.io/Asyrp/)] \
+  [Submitted on 20 Oct 2022] \
+  DDIM의 샘플링 공식 중 predicted x0 부분만 바꿔주면 U-Net의 bottle-neck 부분을 semantic latent space로 쓸 수 있음을 보여준 논문. Asyrp을 제안함. 잘됩니당 좋은 논문입니당 읽어주세요.
+  
   
   ### 4 Nov 2022
   **gDDIM: Generalized denoising diffusion implicit models** \
@@ -35,20 +49,6 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
   이전 numerical ODE의 방식이 DDPM의 sampling manifold를 제대로 반영하지 못함을 지적, DDIM과 high-order numerical sampling의 장점을 결합하여 새로운 sampling 방식을 제시.
   stable diffusion에서 사용된 sampling방식이고 성능이 좋다.
   
-
-  ### 10 Oct 2022
-  **TEXT-GUIDED DIFFUSION IMAGE STYLE TRANSFER WITH CONTRASTIVE LOSS FINE-TUNING** \
-  *Anonymous authors* \
-  Submitted to ICLR2023. [[Paper](https://openreview.net/forum?id=iJ_E0ZCy8fi)] \
-  30 Sept 2022 \
-  CLIP (global + directional) & CUT loss (UNet featuremap들을 패치로 쪼개서 contrastive loss)를 사용해서 stylestransfer.
-  
-  ### 16 Sep 2022
-  **Soft Diffusion: Score Matching for General Corruptions, Giannis Daras et al., 2022**  \
-  *Giannis Daras, Mauricio Delbracio, Hossein Talebi, Alexandros G. Dimakis, Peyman Milanfar* \
-  arXiv 2022. [[Paper](https://arxiv.org/abs/2209.05442)] \
-  12 Sep 2022 \
-  gaussian noise말고 blur까지 씌우면 fid가 더 좋아진다 + new sampling method (momentum sampling)제안, noise(blur) scheduling 제안\
   
 
 </details>
@@ -321,6 +321,18 @@ CLIP을 가지고 model을 finetuning해서 원하는 attribute로 변환하는 
 Submitted to ICLR2023. [[Paper](https://openreview.net/forum?id=iJ_E0ZCy8fi)] \
 30 Sept 2022 \
 CLIP (global + directional) & CUT loss (UNet featuremap들을 패치로 쪼개서 contrastive loss)를 사용해서 stylestransfer.
+
+**Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation** \
+*Narek Tumanyan, Michal Geyer, Shai Bagon, Tali Dekel* \
+CVPR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2211.12572)] [[Project page](https://pnp-diffusion.github.io)] \
+[Submitted on 22 Nov 2022]
+Stable Diffusion의 4th layer의 featuremap과 4-11th laeyr의 self attention Q,K 값을 injection 하여 real image의 structure를 유지하면서 text guided로 I2I translation을 가능하게 함. Diffusion model은 freeze, feature만 만져서 성공적으로 editing. 좋은 접근.
+
+**Diffusion Models already have a Semantic Latent Space** \
+*Mingi Kwon, Jaeseok Jeong, Youngjung Uh* \
+ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2210.10960)] [[Project page](https://kwonminki.github.io/Asyrp/)] \
+[Submitted on 20 Oct 2022] \
+DDIM의 샘플링 공식 중 predicted x0 부분만 바꿔주면 U-Net의 bottle-neck 부분을 semantic latent space로 쓸 수 있음을 보여준 논문. Asyrp을 제안함. 잘됩니당 좋은 논문입니당 읽어주세요.
 
 ## Text-to-Image
 
