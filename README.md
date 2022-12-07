@@ -12,6 +12,7 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 
 <details>
   <summary>In the last month</summary>
+  
   ### 7 Dec 2022
   **DiffRF: Rendering-Guided 3D Radiance Field Diffusion** \
   *Norman Müller, Yawar Siddiqui, Lorenzo Porzi, Samuel Rota Bulò, Peter Kontschieder, Matthias Nießner*\
