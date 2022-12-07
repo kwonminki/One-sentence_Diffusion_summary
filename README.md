@@ -14,18 +14,31 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
   <summary>In the last month</summary>
   
   ### 7 Dec 2022
+  
+  **Paint by Example: Exemplar-based Image Editing with Diffusion Models** \
+  *Binxin Yang, Shuyang Gu, Bo Zhang, Ting Zhang, Xuejin Chen, Xiaoyan Sun, Dong Chen, Fang Wen* \
+  CVPR2023 submission. [[Paper](https://arxiv.org/abs/2211.13227)] \
+  [Submitted on 23 Nov 2022] \
+  유저가 지정한 영역에 컨디션으로 주어진 이미지의 semantic을 생성한 논문. 1. StableDiffusion으로 init 2. 이미지의 메인 오브젝트 패치를 떼어내고, CLIP 이미지 인코더에 augmentation해서 넣어준다. 이 때 CLIP을 1024까지 임베딩을 시켜버리고, 이걸 다시 리니어레이어 몇개 통과시켜서 컨디션으로 넣어줌. 3. 2번에 따라서 학습.  결과 좋음. 방법 좋음. 논문 잘 읽힘. 괜찮은 논문.
+  
+  **DiffEdit: Diffusion-based semantic image editing with mask guidance** \
+*Guillaume Couairon, Jakob Verbeek, Holger Schwenk, Matthieu Cord* \
+Submitted to ICLR2023. [[Paper](https://arxiv.org/abs/2210.11427)] \
+20 Oct 2022 \
+Reference text와 query text가 주어졌을때 두 텍스트를 적용했을때의 noise estimates 차이로 마스크를 생성 - 생성한 마스크를 통해 DDIM decoding과정에서 encoding된 것과 적절히 합쳐서 text 부분만 edit하는 간단한 방법.
+  
   **DiffRF: Rendering-Guided 3D Radiance Field Diffusion** \
   *Norman Müller, Yawar Siddiqui, Lorenzo Porzi, Samuel Rota Bulò, Peter Kontschieder, Matthias Nießner*\
   arXiv 2022. [[Paper](https://arxiv.org/abs/2212.01206)] \
   2 Dec 2022 \
-  Diffusion 으로 3d radiacne field generation한 논문. 이전에 DreamFusion이나 GAUDI 와 같이 diffusion으로 3D generation하는 works이 있었지만, 3d unet 을 활용하여 3d Radiance field를 직접 denoise하는 것은 이 연구가 처음. 모든 sample을 voxel grid로 만들어야하는 precomputation이 필요하다. quality를 높이기 위해 3d radiance field의 denoising network 학습이외에 render 된 2d image 상에서의 RGB loss와 마찬가지로 rendered image를 처리하는 CNN network를 추가하였다.\
+  Diffusion 으로 3d radiacne field generation한 논문. 이전에 DreamFusion이나 GAUDI 와 같이 diffusion으로 3D generation하는 works이 있었지만, 3d unet 을 활용하여 3d Radiance field를 직접 denoise하는 것은 이 연구가 처음. 모든 sample을 voxel grid로 만들어야하는 precomputation이 필요하다. quality를 높이기 위해 3d radiance field의 denoising network 학습이외에 render 된 2d image 상에서의 RGB loss와 마찬가지로 rendered image를 처리하는 CNN network를 추가하였다.
   
   
   **Maximum Likelihood Training of Implicit Nonlinear Diffusion Models**\
   *Dongjun Kim, Byeonghu Na, Se Jung Kwon, Dongsoo Lee, Wanmo Kang, Il-Chul Moon*\
   NeurIPS22. [[Paper](https://arxiv.org/abs/2205.13699)]\
   27 May 2022 \
-  Normalizing flow의 invertible한 성질을 적용하여, data adatible 한 nonlinear diffusion process를 implicit하게 학습. FID 성능을 올림.\
+  Normalizing flow의 invertible한 성질을 적용하여, data adatible 한 nonlinear diffusion process를 implicit하게 학습. FID 성능을 올림.
   
   
   ### 29 Nov 2022
@@ -48,21 +61,6 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
   ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2206.05564)] \
   [Submitted on 11 Jun 2022] \
   DDPM, DDIM, 등등을 모두 SDE의 형태로 전환, Blur Diffusion이나 Critically-Damped Langevin Diffusion 까지도 SDE로 표현한 뒤, general한 form의 SDE -> DDIM을 만드는 방법을 제안한다. 이를 통해 istropic diffusion models까지 DDIM으로 fast sampling 가능하게 함. 
-  
-  
-  ### 14 Oct 2022
-  **Video Diffusion Models** \
-  *Jonathan Ho, Tim Salimans, Alexey Gritsenko, William Chan, Mohammad Norouzi, David Fleet* \
-  arXiv 2022. [[Paper](https://arxiv.org/abs/2204.03458)] \
-  7 Aprill 2022 \
-  Diffusion을 이용한 Video generation을 처음으로 한 논문, Video의 길이를 늘리고, quality를 높이는 것에 대한 방법제시.
-  
-  **Pseudo Numerical Methods for Diffusion Models on Manifolds** \
-  *Luping Liu, Yi Ren, Zhijie Lin, Zhou Zhao* \
-  ICLR 2022 Poster [[Paper](https://arxiv.org/abs/2202.09778)] \
-  Submitted on 20 Feb 2022  \
-  이전 numerical ODE의 방식이 DDPM의 sampling manifold를 제대로 반영하지 못함을 지적, DDIM과 high-order numerical sampling의 장점을 결합하여 새로운 sampling 방식을 제시.
-  stable diffusion에서 사용된 sampling방식이고 성능이 좋다.
   
   
 
@@ -188,6 +186,12 @@ arXiv 2022. [[Paper](https://arxiv.org/abs/2206.00364)] \
 1 Jun 2022 \
 실험적으로 Diffusion model을 어떻게 설계하는 것이 좋은지 잘 정리해놓은 논문.
 
+**Classifier-Free Diffusion Guidance** \
+*Jonathan Ho, Tim Salimans* \
+NeurIPS Workshop 2021. [[Paper](https://arxiv.org/abs/2207.12598)] \
+28 Sep 2021 \
+GAN으로 치면 condition GAN. 외부에서 classifier로 guidance를 주는 대신, UNet에 바로 컨디션을 꽂아줌. 이 때 수식을 classifier guidance랑 같아지도록 전개, 잘 됨. 현재 잘 되는 대부분의 모델들은 free guidance 방식으로 학습됨.
+
 ## Image Generation
 
 **Score-Based Generative Modeling with Critically-Damped Langevin Diffusion** \
@@ -289,12 +293,6 @@ stroke를 노이즈를 적당히 씌웠다가 샘플링하면 비슷한 색의 r
 
 ## Classifier guidance sampling
 
-**Classifier-Free Diffusion Guidance** \
-*Jonathan Ho, Tim Salimans* \
-NeurIPS Workshop 2021. [[Paper](https://arxiv.org/abs/2207.12598)] \
-28 Sep 2021 \
-엄밀히는 classifier guidance가 아니지만 학습할 때 서서히 fade out 하는 논문.
-
 **Blended Diffusion for Text-driven Editing of Natural Images** \
 *Omri Avrahami, Dani Lischinski, Ohad Fried* \
 CVPR 2022. [[Paper](https://arxiv.org/abs/2111.14818)] [[Project](https://omriavrahami.com/blended-diffusion-page/)] [[Github](https://github.com/omriav/blended-diffusion)] \
@@ -320,6 +318,12 @@ arXiv 2022. [[Paper](https://arxiv.org/abs/2210.06462)] \
 Off-the-shelf model들의 사용으로 feature를 뽑아내고 클러스터링을 활용한 self-guided label -> classifier, object detection, semantic segmentation 등으로 guidance를 주어 그에 따르 이미지생성 (시간이 오래 걸릴듯, high resolution 어렵다는 단점)
 
 ## Image Editing
+
+**Paint by Example: Exemplar-based Image Editing with Diffusion Models** \
+*Binxin Yang, Shuyang Gu, Bo Zhang, Ting Zhang, Xuejin Chen, Xiaoyan Sun, Dong Chen, Fang Wen* \
+CVPR2023 submission. [[Paper](https://arxiv.org/abs/2211.13227)] \
+[Submitted on 23 Nov 2022] \
+유저가 지정한 영역에 컨디션으로 주어진 이미지의 semantic을 생성한 논문. 1. StableDiffusion으로 init 2. 이미지의 메인 오브젝트 패치를 떼어내고, CLIP 이미지 인코더에 augmentation해서 넣어준다. 이 때 CLIP을 1024까지 임베딩을 시켜버리고, 이걸 다시 리니어레이어 몇개 통과시켜서 컨디션으로 넣어줌. 3. 2번에 따라서 학습.  결과 좋음. 방법 좋음. 논문 잘 읽힘. 괜찮은 논문.
 
 **Denoising Diffusion Restoration Models** \
 *Bahjat Kawar, Michael Elad, Stefano Ermon, Jiaming Song* \
