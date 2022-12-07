@@ -12,6 +12,20 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 
 <details>
   <summary>In the last month</summary>
+  ### 7 Dec 2022
+  **DiffRF: Rendering-Guided 3D Radiance Field Diffusion** \
+  *Norman Müller, Yawar Siddiqui, Lorenzo Porzi, Samuel Rota Bulò, Peter Kontschieder, Matthias Nießner*\
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2212.01206)] \
+  2 Dec 2022 \
+  Diffusion 으로 3d radiacne field generation한 논문. 이전에 DreamFusion이나 GAUDI 와 같이 diffusion으로 3D generation하는 works이 있었지만, 3d unet 을 활용하여 3d Radiance field를 직접 denoise하는 것은 이 연구가 처음. 모든 sample을 voxel grid로 만들어야하는 precomputation이 필요하다. quality를 높이기 위해 3d radiance field의 denoising network 학습이외에 render 된 2d image 상에서의 RGB loss와 마찬가지로 rendered image를 처리하는 CNN network를 추가하였다.\
+  
+  
+  **Maximum Likelihood Training of Implicit Nonlinear Diffusion Models**\
+  *Dongjun Kim, Byeonghu Na, Se Jung Kwon, Dongsoo Lee, Wanmo Kang, Il-Chul Moon*\
+  NeurIPS22. [[Paper](https://arxiv.org/abs/2205.13699)]\
+  27 May 2022 \
+  Normalizing flow의 invertible한 성질을 적용하여, data adatible 한 nonlinear diffusion process를 implicit하게 학습. FID 성능을 올림.\
+  
   
   ### 29 Nov 2022
   **Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation** \
@@ -69,6 +83,7 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
   - [Text-to-Image](#text-to-image)
   - [Fast Sampling](#fast-sampling)
   - [Video Generation](#video-generation)
+  - [3D](#3D)
     
   
 # Resources
@@ -210,6 +225,13 @@ Noise에 가까울 수록 low frequency 정보만 남도록 gaussian kernel 통�
 arXiv 2022. [[Paper](https://arxiv.org/abs/2209.05442)] \
 12 Sep 2022 \
 gaussian noise말고 blur까지 씌우면 fid가 더 좋아진다 + new sampling method (momentum sampling)제안, noise(blur) scheduling 제안\
+
+**Maximum Likelihood Training of Implicit Nonlinear Diffusion Models**\
+*Dongjun Kim, Byeonghu Na, Se Jung Kwon, Dongsoo Lee, Wanmo Kang, Il-Chul Moon*\
+NeurIPS22. [[Paper](https://arxiv.org/abs/2205.13699)]\
+27 May 2022 \
+Normalizing flow의 invertible한 성질을 적용하여, data adatible 한 nonlinear diffusion process를 implicit하게 학습. FID 성능을 올림.\
+
 
 
 ## Connection with other framworks
@@ -365,8 +387,16 @@ DDPM, DDIM, 등등을 모두 SDE의 형태로 전환, Blur Diffusion이나 Criti
 **Video Diffusion Models** \
 *Jonathan Ho, Tim Salimans, Alexey Gritsenko, William Chan, Mohammad Norouzi, David Fleet* \
 arXiv 2022. [[Paper](https://arxiv.org/abs/2204.03458)] \
-7 Aprill 2022 \
+7 April 2022 \
 Diffusion을 이용한 Video generation을 처음으로 한 논문, Video의 길이를 늘리고, quality를 높이는 것에 대한 방법제시.
+
+## 3D
+
+**DiffRF: Rendering-Guided 3D Radiance Field Diffusion** \
+*Norman Müller, Yawar Siddiqui, Lorenzo Porzi, Samuel Rota Bulò, Peter Kontschieder, Matthias Nießner*\
+arXiv 2022. [[Paper](https://arxiv.org/abs/2212.01206)] \
+2 Dec 2022 \
+Diffusion 으로 3d radiacne field generation한 논문. 이전에 DreamFusion이나 GAUDI 와 같이 diffusion으로 3D generation하는 works이 있었지만, 3d unet 을 활용하여 3d Radiance field를 직접 denoise하는 것은 이 연구가 처음. 모든 sample을 voxel grid로 만들어야하는 precomputation이 필요하다. quality를 높이기 위해 3d radiance field의 denoising network 학습이외에 render 된 2d image 상에서의 RGB loss와 마찬가지로 rendered image를 처리하는 CNN network를 추가하였다.\
 
 ## 읽을것들
 
