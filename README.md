@@ -333,6 +333,12 @@ NeurlPS 2022. [[Paper](https://arxiv.org/abs/2111.05826)] \
 10 Nov 2021 \
 별거 안하고 그냥 튜닝해서 모델 하나로 4가지 task에서 SOTA 달성.
 
+**DiffEdit: Diffusion-based semantic image editing with mask guidance** \
+*Guillaume Couairon, Jakob Verbeek, Holger Schwenk, Matthieu Cord* \
+Submitted to ICLR2023. [[Paper](https://arxiv.org/abs/2210.11427)] \
+20 Oct 2022 \
+Reference text와 query text가 주어졌을때 두 텍스트를 적용했을때의 noise estimates 차이로 마스크를 생성 - 생성한 마스크를 통해 DDIM decoding과정에서 encoding된 것과 적절히 합쳐서 text 부분만 edit하는 간단한 방법.
+
 **DiffusionCLIP: Text-guided Image Manipulation Using Diffusion Models** \
 *Gwanghyun Kim, Jong Chul Ye* \
 CVPR 2022. [[Paper](https://arxiv.org/abs/2110.02711)] \
