@@ -12,6 +12,8 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 
 <details>
   <summary>In the last month</summary>
+  
+  
   ### 23 Dec 2022
   
   **Null-text Inversion for Editing Real Images using Guided Diffusion Models** \
@@ -19,6 +21,30 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
   arXiv 2022. [[Paper](https://arxiv.org/abs/2211.09794)] \
   17 Nov 2022 \
   별도의 model fine-tuning 없이, real image 에 해당하는 null-text를 optimization 하여 prompt2prompt 방식으로 object의 semantic detail을 유지하면서 image editing을 가능하게함. 방법 좋은 결과 좋은. 괜찮은 논문.
+  
+  **An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion** \
+  *Rinon Gal, Yuval Alaluf, Yuval Atzmon, Or Patashnik, Amit H. Bermano, Gal Chechik, Daniel Cohen-Or* \
+  arXiv 2022. ICLR2023 submission [[Paper](https://arxiv.org/abs/2208.01618)] \
+  [Submitted on 2 Aug 2022] \
+  이미지 3~5장을 S* 라는 문자로 inversion한다. GAN inversion과 유사. 이미지를 생성하는 과정에서 나오는 노이즈와 given image를 inversion 하는 과정에서 나오는 노이즈간의 MSE loss를 사용하여 "A photo of S*" 라는 prompt의 S*에 해당하는 토큰을 직접 optimize한다.
+  
+  **Optimizing Prompts for Text-to-Image Generation** \
+  *Yaru Hao, Zewen Chi, Li Dong, Furu Wei* \
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2212.09611)][[Demo page](https://huggingface.co/spaces/microsoft/Promptist)][[Git](https://github.com/microsoft/LMOps/tree/main/promptist)] \
+  [Submitted on 19 Dec 2022] \
+  "A white knight riding a black horse." -> "a white knight riding a black horse, intricate, elegant, highly detailed, digital painting, artstation, concept art, sharp focus, illustration, by justin gerard and artgerm, 8 k" 텍스트 뒤에 붙는 글자들을 강화학습으로 만들어낸다. GPT모델을 prompt pair로 fintuning하여 policy 모델로 사용한다. 이미지의 심미적, 텍스트 반영을 기반으로 reward를 주는 형태로 짜여져 있다.
+  
+  **Human Motion Diffusion Model** \
+  *Guy Tevet, Sigal Raab, Brian Gordon, Yonatan Shafir, Daniel Cohen-Or, Amit H. Bermano* \
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2209.14916)][[Project page](https://guytevet.github.io/mdm-page/)] \
+  [Submitted on 29 Sep 2022] \
+  사람의 Motion을 생성하는데 Diffusion을 사용. spatial한 정보가 필요없기에 Transformer를 사용하였다. 이 때 모든 xt에 대하여 모델은 바로 x0를 예측한다. classifier-free guidance를 10%로 사용하였으며 이를 통해 text-to-motion 생성이 가능하다.
+  
+  **PhysDiff: Physics-Guided Human Motion Diffusion Model** \
+  *Ye Yuan, Jiaming Song, Umar Iqbal, Arash Vahdat, Jan Kautz* \
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2212.02500)] \
+  [Submitted on 5 Dec 2022] \
+  Motion Diffusion Model에서 발이 떨어지는 문제를 해결하기 위해 강화학습을 사용함. 자세한건 패스..
 
   
   ### 7 Dec 2022
@@ -63,13 +89,6 @@ Reference text와 query text가 주어졌을때 두 텍스트를 적용했을때
   DDIM의 샘플링 공식 중 predicted x0 부분만 바꿔주면 U-Net의 bottle-neck 부분을 semantic latent space로 쓸 수 있음을 보여준 논문. Asyrp을 제안함. 잘됩니당 좋은 논문입니당 읽어주세요.
   
   
-  ### 4 Nov 2022
-  **gDDIM: Generalized denoising diffusion implicit models** \
-  *Qinsheng Zhang, Molei Tao, Yongxin Chen* \
-  ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2206.05564)] \
-  [Submitted on 11 Jun 2022] \
-  DDPM, DDIM, 등등을 모두 SDE의 형태로 전환, Blur Diffusion이나 Critically-Damped Langevin Diffusion 까지도 SDE로 표현한 뒤, general한 form의 SDE -> DDIM을 만드는 방법을 제안한다. 이를 통해 istropic diffusion models까지 DDIM으로 fast sampling 가능하게 함. 
-  
   
 
 </details>
@@ -87,10 +106,11 @@ Reference text와 query text가 주어졌을때 두 텍스트를 적용했을때
   - [Image space guidance sampling](#image-space-guidance-sampling)
   - [Classifier guidance sampling](#classifier-guidance-sampling)
   - [Image Editing](#image-editing)
-  - [Text-to-Image](#text-to-image)
+  - [Text-focused](#text-focused)
   - [Fast Sampling](#fast-sampling)
   - [Video Generation](#video-generation)
-  - [3D](#3D)
+  - [3D](#3d)
+  - [기타](#기타)
     
   
 # Resources
@@ -381,7 +401,22 @@ ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2210.10960)] [[Pr
 [Submitted on 20 Oct 2022] \
 DDIM의 샘플링 공식 중 predicted x0 부분만 바꿔주면 U-Net의 bottle-neck 부분을 semantic latent space로 쓸 수 있음을 보여준 논문. Asyrp을 제안함. 잘됩니당 좋은 논문입니당 읽어주세요.
 
-## Text-to-Image
+
+
+
+## Text-focused
+
+**Optimizing Prompts for Text-to-Image Generation** \
+*Yaru Hao, Zewen Chi, Li Dong, Furu Wei* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2212.09611)][[Demo page](https://huggingface.co/spaces/microsoft/Promptist)][[Git](https://github.com/microsoft/LMOps/tree/main/promptist)] \
+[Submitted on 19 Dec 2022] \
+"A white knight riding a black horse." -> "a white knight riding a black horse, intricate, elegant, highly detailed, digital painting, artstation, concept art, sharp focus, illustration, by justin gerard and artgerm, 8 k" 텍스트 뒤에 붙는 글자들을 강화학습으로 만들어낸다. GPT모델을 prompt pair로 fintuning하여 policy 모델로 사용한다. 이미지의 심미적, 텍스트 반영을 기반으로 reward를 주는 형태로 짜여져 있다.
+
+**An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion** \
+*Rinon Gal, Yuval Alaluf, Yuval Atzmon, Or Patashnik, Amit H. Bermano, Gal Chechik, Daniel Cohen-Or* \
+arXiv 2022. ICLR2023 submission [[Paper](https://arxiv.org/abs/2208.01618)] \
+[Submitted on 2 Aug 2022] \
+이미지 3~5장을 S* 라는 문자로 inversion한다. GAN inversion과 유사. 이미지를 생성하는 과정에서 나오는 노이즈와 given image를 inversion 하는 과정에서 나오는 노이즈간의 MSE loss를 사용하여 "A photo of S*" 라는 prompt의 S*에 해당하는 토큰을 직접 optimize한다.
 
 
 ## Fast Sampling
@@ -422,6 +457,21 @@ Diffusion을 이용한 Video generation을 처음으로 한 논문, Video의 길
 arXiv 2022. [[Paper](https://arxiv.org/abs/2212.01206)] \
 2 Dec 2022 \
 Diffusion 으로 3d radiacne field generation한 논문. 이전에 DreamFusion이나 GAUDI 와 같이 diffusion으로 3D generation하는 works이 있었지만, 3d unet 을 활용하여 3d Radiance field를 직접 denoise하는 것은 이 연구가 처음. 모든 sample을 voxel grid로 만들어야하는 precomputation이 필요하다. quality를 높이기 위해 3d radiance field의 denoising network 학습이외에 render 된 2d image 상에서의 RGB loss와 마찬가지로 rendered image를 처리하는 CNN network를 추가하였다.\
+
+
+## 기타
+
+**Human Motion Diffusion Model** \
+*Guy Tevet, Sigal Raab, Brian Gordon, Yonatan Shafir, Daniel Cohen-Or, Amit H. Bermano* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2209.14916)][[Project page](https://guytevet.github.io/mdm-page/)] \
+[Submitted on 29 Sep 2022] \
+사람의 Motion을 생성하는데 Diffusion을 사용. spatial한 정보가 필요없기에 Transformer를 사용하였다. 이 때 모든 xt에 대하여 모델은 바로 x0를 예측한다. classifier-free guidance를 10%로 사용하였으며 이를 통해 text-to-motion 생성이 가능하다.
+
+**PhysDiff: Physics-Guided Human Motion Diffusion Model** \
+*Ye Yuan, Jiaming Song, Umar Iqbal, Arash Vahdat, Jan Kautz* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2212.02500)] \
+[Submitted on 5 Dec 2022] \
+Motion Diffusion Model에서 발이 떨어지는 문제를 해결하기 위해 강화학습을 사용함. 자세한건 패스..
 
 ## 읽을것들
 
