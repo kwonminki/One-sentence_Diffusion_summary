@@ -12,6 +12,14 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 
 <details>
   <summary>In the last month</summary>
+  ### 23 Dec 2022
+  
+  **Null-text Inversion for Editing Real Images using Guided Diffusion Models** \
+  *Ron Mokady, Amir Hertz, Kfir Aberman, Yael Pritch, Daniel Cohen-Or* \
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2211.09794)] \
+  17 Nov 2022 \
+  별도의 model fine-tuning 없이, real image 에 해당하는 null-text를 optimization 하여 prompt2prompt 방식으로 object의 semantic detail을 유지하면서 image editing을 가능하게함. 방법 좋은 결과 좋은. 괜찮은 논문.
+
   
   ### 7 Dec 2022
   
@@ -318,6 +326,12 @@ arXiv 2022. [[Paper](https://arxiv.org/abs/2210.06462)] \
 Off-the-shelf model들의 사용으로 feature를 뽑아내고 클러스터링을 활용한 self-guided label -> classifier, object detection, semantic segmentation 등으로 guidance를 주어 그에 따르 이미지생성 (시간이 오래 걸릴듯, high resolution 어렵다는 단점)
 
 ## Image Editing
+
+**Null-text Inversion for Editing Real Images using Guided Diffusion Models** \
+*Ron Mokady, Amir Hertz, Kfir Aberman, Yael Pritch, Daniel Cohen-Or* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2211.09794)] \
+17 Nov 2022 \
+별도의 model fine-tuning 없이, real image 에 해당하는 null-text를 optimization 하여 prompt2prompt 방식으로 object의 semantic detail을 유지하면서 image editing을 가능하게함. 방법 좋은 결과 좋은. 괜찮은 논문.
 
 **Paint by Example: Exemplar-based Image Editing with Diffusion Models** \
 *Binxin Yang, Shuyang Gu, Bo Zhang, Ting Zhang, Xuejin Chen, Xiaoyan Sun, Dong Chen, Fang Wen* \
