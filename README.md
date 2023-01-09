@@ -13,6 +13,14 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 <details>
   <summary>In the last month</summary>
   
+  ### 09 Jan 2023
+  
+  **Scalable Diffusion Models with Transformers** \
+  *William Peebles, Saining Xie* \
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2212.09748)] [[Project page](https://www.wpeebles.com/DiT)] [[Git](https://github.com/facebookresearch/DiT)]\
+  [Submitted on 19 Dec 2022] \
+  트랜스포머를 사용해서 이미지넷에서 SOTA. 기본적으로 VAE의 latent 상에서의 Diffusion이며, t랑 class를 concat 해서 mlp 하나 태우고, adaLN 을 적용시킴. 약간 LDM을 transformer로 구현한 느낌. 실험 좋고 내용 간단한데 굳이 열심히 읽어볼 필요는 없는 논문.
+  
   
   ### 23 Dec 2022
   
@@ -74,19 +82,6 @@ Reference text와 query text가 주어졌을때 두 텍스트를 적용했을때
   27 May 2022 \
   Normalizing flow의 invertible한 성질을 적용하여, data adatible 한 nonlinear diffusion process를 implicit하게 학습. FID 성능을 올림.
   
-  
-  ### 29 Nov 2022
-  **Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation** \
-  *Narek Tumanyan, Michal Geyer, Shai Bagon, Tali Dekel* \
-  CVPR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2211.12572)] [[Project page](https://pnp-diffusion.github.io)]  \
-  [Submitted on 22 Nov 2022] \
-  Stable Diffusion의 4th layer의 featuremap과 4-11th laeyr의 self attention Q,K 값을 injection 하여 real image의 structure를 유지하면서 text guided로 I2I translation을 가능하게 함. Diffusion model은 freeze, feature만 만져서 성공적으로 editing. 좋은 접근.
-  
-  **Diffusion Models already have a Semantic Latent Space** \
-  *Mingi Kwon, Jaeseok Jeong, Youngjung Uh* \
-  ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2210.10960)] [[Project page](https://kwonminki.github.io/Asyrp/)] \
-  [Submitted on 20 Oct 2022] \
-  DDIM의 샘플링 공식 중 predicted x0 부분만 바꿔주면 U-Net의 bottle-neck 부분을 semantic latent space로 쓸 수 있음을 보여준 논문. Asyrp을 제안함. 잘됩니당 좋은 논문입니당 읽어주세요.
   
   
   
@@ -265,6 +260,11 @@ NeurIPS22. [[Paper](https://arxiv.org/abs/2205.13699)]\
 27 May 2022 \
 Normalizing flow의 invertible한 성질을 적용하여, data adatible 한 nonlinear diffusion process를 implicit하게 학습. FID 성능을 올림.\
 
+**Scalable Diffusion Models with Transformers** \
+*William Peebles, Saining Xie* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2212.09748)] [[Project page](https://www.wpeebles.com/DiT)] [[Git](https://github.com/facebookresearch/DiT)]\
+[Submitted on 19 Dec 2022] \
+트랜스포머를 사용해서 이미지넷에서 SOTA. 기본적으로 VAE의 latent 상에서의 Diffusion이며, t랑 class를 concat 해서 mlp 하나 태우고, adaLN 을 적용시킴. 약간 LDM을 transformer로 구현한 느낌. 실험 좋고 내용 간단한데 굳이 열심히 읽어볼 필요는 없는 논문. \
 
 
 ## Connection with other framworks
