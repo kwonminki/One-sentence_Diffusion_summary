@@ -13,6 +13,17 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 <details>
   <summary>In the last month</summary>
   
+  ### 18 Jan 2023
+  ** Multi-Concept Customization of Text-to-Image Diffusion ** \
+  *Nupur Kumari, Bingliang Zhang, Richard Zhang, Eli Shechtman, Jun-Yan Zhu* \
+  arxiv Submitted on 8 Dec 2022\ preprint [[Paper](https://arxiv.org/abs/2212.04488)] 
+   1)model 일부만 fine-tuning + 2) text optimization 을 통해서 Large text-to-image Diffusion model을 few-shot user images 상에서 customizing 하는 논문
+  
+  **eDiff-I: Text-to-Image Diffusion Models with an Ensemble of Expert Denoisers** \
+  *Yogesh Balaji, Seungjun Nah, Xun Huang, Arash Vahdat, Jiaming Song, Karsten Kreis, Miika Aittala, Timo Aila, Samuli Laine, Bryan Catanzaro, Tero Karras, Ming-Yu Liu*\
+  arxiv [Submitted on 2 Nov 2022 (v1), last revised 17 Nov 2022 (this version, v4)]\
+   Nvidia version large text-to-image model, 한개의 diffusion model말고 각 stpe별로 여러개의 network를 학습시켜 ensemble한다.
+  
   ### 09 Jan 2023
   
   **Scalable Diffusion Models with Transformers** \
@@ -217,6 +228,11 @@ GAN으로 치면 condition GAN. 외부에서 classifier로 guidance를 주는 �
 
 ## Image Generation
 
+**eDiff-I: Text-to-Image Diffusion Models with an Ensemble of Expert Denoisers** \
+*Yogesh Balaji, Seungjun Nah, Xun Huang, Arash Vahdat, Jiaming Song, Karsten Kreis, Miika Aittala, Timo Aila, Samuli Laine, Bryan Catanzaro, Tero Karras, Ming-Yu Liu*\
+arxiv [Submitted on 2 Nov 2022 (v1), last revised 17 Nov 2022 (this version, v4)]\
+ Nvidia version large text-to-image model, 한개의 diffusion model말고 각 stpe별로 여러개의 network를 학습시켜 ensemble한다.
+
 **Score-Based Generative Modeling with Critically-Damped Langevin Diffusion** \
 *Tim Dockhorn, Arash Vahdat, Karsten Kreis* \
 arXiv 2021. [[Paper](https://arxiv.org/abs/2112.07068)] [[Project](https://nv-tlabs.github.io/CLD-SGM/)] \
@@ -405,6 +421,11 @@ DDIM의 샘플링 공식 중 predicted x0 부분만 바꿔주면 U-Net의 bottle
 
 
 ## Text-focused
+
+** Multi-Concept Customization of Text-to-Image Diffusion ** \
+*Nupur Kumari, Bingliang Zhang, Richard Zhang, Eli Shechtman, Jun-Yan Zhu* \
+arxiv Submitted on 8 Dec 2022\ preprint [[Paper](https://arxiv.org/abs/2212.04488)] 
+ 1)model 일부만 fine-tuning + 2) text optimization 을 통해서 Large text-to-image Diffusion model을 few-shot user images 상에서 customizing 하는 논문
 
 **Optimizing Prompts for Text-to-Image Generation** \
 *Yaru Hao, Zewen Chi, Li Dong, Furu Wei* \
