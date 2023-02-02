@@ -12,9 +12,18 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 
 <details>
   <summary>In the last month</summary>
+
+  ### 02 Feb 2023
+
+  **GLIGEN: Open-Set Grounded Text-to-Image Generation** \
+  *Yuheng Li, Haotian Liu, Qingyang Wu, Fangzhou Mu, Jianwei Yang, Jianfeng Gao, Chunyuan Li, Yong Jae Lee* \
+  arXiv 2023. [[Paper](https://arxiv.org/abs/2301.07093)]\
+  [Submitted on 17 Jan 2023]\
+  Stable diffusion은 freeze 해 둔 채로 self attention과 cross attention 사이에 Gated Self attention layer를 추가하여 학습. Bounding box와 캡션, key point(스켈레톤), 이미지 가이드로 원하는 위치에 원하는 샘플을 넣을 수 있음. 잘되고, 실험 엄청 많이 해줌. 중간에 layer 넣는다는 점이 마음에 듬.
   
   ### 18 Jan 2023
-  ** Multi-Concept Customization of Text-to-Image Diffusion ** \
+
+  **Multi-Concept Customization of Text-to-Image Diffusion** \
   *Nupur Kumari, Bingliang Zhang, Richard Zhang, Eli Shechtman, Jun-Yan Zhu* \
   arxiv Submitted on 8 Dec 2022\ preprint [[Paper](https://arxiv.org/abs/2212.04488)] 
    1)model 일부만 fine-tuning + 2) text optimization 을 통해서 Large text-to-image Diffusion model을 few-shot user images 상에서 customizing 하는 논문
@@ -31,70 +40,7 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
   arXiv 2022. [[Paper](https://arxiv.org/abs/2212.09748)] [[Project page](https://www.wpeebles.com/DiT)] [[Git](https://github.com/facebookresearch/DiT)]\
   [Submitted on 19 Dec 2022] \
   트랜스포머를 사용해서 이미지넷에서 SOTA. 기본적으로 VAE의 latent 상에서의 Diffusion이며, t랑 class를 concat 해서 mlp 하나 태우고, adaLN 을 적용시킴. 약간 LDM을 transformer로 구현한 느낌. 실험 좋고 내용 간단한데 굳이 열심히 읽어볼 필요는 없는 논문.
-  
-  
-  ### 23 Dec 2022
-  
-  **Null-text Inversion for Editing Real Images using Guided Diffusion Models** \
-  *Ron Mokady, Amir Hertz, Kfir Aberman, Yael Pritch, Daniel Cohen-Or* \
-  arXiv 2022. [[Paper](https://arxiv.org/abs/2211.09794)] \
-  17 Nov 2022 \
-  별도의 model fine-tuning 없이, real image 에 해당하는 null-text를 optimization 하여 prompt2prompt 방식으로 object의 semantic detail을 유지하면서 image editing을 가능하게함. 방법 좋은 결과 좋은. 괜찮은 논문.
-  
-  **An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion** \
-  *Rinon Gal, Yuval Alaluf, Yuval Atzmon, Or Patashnik, Amit H. Bermano, Gal Chechik, Daniel Cohen-Or* \
-  arXiv 2022. ICLR2023 submission [[Paper](https://arxiv.org/abs/2208.01618)] \
-  [Submitted on 2 Aug 2022] \
-  이미지 3~5장을 S* 라는 문자로 inversion한다. GAN inversion과 유사. 이미지를 생성하는 과정에서 나오는 노이즈와 given image를 inversion 하는 과정에서 나오는 노이즈간의 MSE loss를 사용하여 "A photo of S*" 라는 prompt의 S*에 해당하는 토큰을 직접 optimize한다.
-  
-  **Optimizing Prompts for Text-to-Image Generation** \
-  *Yaru Hao, Zewen Chi, Li Dong, Furu Wei* \
-  arXiv 2022. [[Paper](https://arxiv.org/abs/2212.09611)][[Demo page](https://huggingface.co/spaces/microsoft/Promptist)][[Git](https://github.com/microsoft/LMOps/tree/main/promptist)] \
-  [Submitted on 19 Dec 2022] \
-  "A white knight riding a black horse." -> "a white knight riding a black horse, intricate, elegant, highly detailed, digital painting, artstation, concept art, sharp focus, illustration, by justin gerard and artgerm, 8 k" 텍스트 뒤에 붙는 글자들을 강화학습으로 만들어낸다. GPT모델을 prompt pair로 fintuning하여 policy 모델로 사용한다. 이미지의 심미적, 텍스트 반영을 기반으로 reward를 주는 형태로 짜여져 있다.
-  
-  **Human Motion Diffusion Model** \
-  *Guy Tevet, Sigal Raab, Brian Gordon, Yonatan Shafir, Daniel Cohen-Or, Amit H. Bermano* \
-  arXiv 2022. [[Paper](https://arxiv.org/abs/2209.14916)][[Project page](https://guytevet.github.io/mdm-page/)] \
-  [Submitted on 29 Sep 2022] \
-  사람의 Motion을 생성하는데 Diffusion을 사용. spatial한 정보가 필요없기에 Transformer를 사용하였다. 이 때 모든 xt에 대하여 모델은 바로 x0를 예측한다. classifier-free guidance를 10%로 사용하였으며 이를 통해 text-to-motion 생성이 가능하다.
-  
-  **PhysDiff: Physics-Guided Human Motion Diffusion Model** \
-  *Ye Yuan, Jiaming Song, Umar Iqbal, Arash Vahdat, Jan Kautz* \
-  arXiv 2022. [[Paper](https://arxiv.org/abs/2212.02500)] \
-  [Submitted on 5 Dec 2022] \
-  Motion Diffusion Model에서 발이 떨어지는 문제를 해결하기 위해 강화학습을 사용함. 자세한건 패스..
-
-  
-  ### 7 Dec 2022
-  
-  **Paint by Example: Exemplar-based Image Editing with Diffusion Models** \
-  *Binxin Yang, Shuyang Gu, Bo Zhang, Ting Zhang, Xuejin Chen, Xiaoyan Sun, Dong Chen, Fang Wen* \
-  CVPR2023 submission. [[Paper](https://arxiv.org/abs/2211.13227)] \
-  [Submitted on 23 Nov 2022] \
-  유저가 지정한 영역에 컨디션으로 주어진 이미지의 semantic을 생성한 논문. 1. StableDiffusion으로 init 2. 이미지의 메인 오브젝트 패치를 떼어내고, CLIP 이미지 인코더에 augmentation해서 넣어준다. 이 때 CLIP을 1024까지 임베딩을 시켜버리고, 이걸 다시 리니어레이어 몇개 통과시켜서 컨디션으로 넣어줌. 3. 2번에 따라서 학습.  결과 좋음. 방법 좋음. 논문 잘 읽힘. 괜찮은 논문.
-  
-  **DiffEdit: Diffusion-based semantic image editing with mask guidance** \
-*Guillaume Couairon, Jakob Verbeek, Holger Schwenk, Matthieu Cord* \
-Submitted to ICLR2023. [[Paper](https://arxiv.org/abs/2210.11427)] \
-20 Oct 2022 \
-Reference text와 query text가 주어졌을때 두 텍스트를 적용했을때의 noise estimates 차이로 마스크를 생성 - 생성한 마스크를 통해 DDIM decoding과정에서 encoding된 것과 적절히 합쳐서 text 부분만 edit하는 간단한 방법.
-  
-  **DiffRF: Rendering-Guided 3D Radiance Field Diffusion** \
-  *Norman Müller, Yawar Siddiqui, Lorenzo Porzi, Samuel Rota Bulò, Peter Kontschieder, Matthias Nießner*\
-  arXiv 2022. [[Paper](https://arxiv.org/abs/2212.01206)] \
-  2 Dec 2022 \
-  Diffusion 으로 3d radiacne field generation한 논문. 이전에 DreamFusion이나 GAUDI 와 같이 diffusion으로 3D generation하는 works이 있었지만, 3d unet 을 활용하여 3d Radiance field를 직접 denoise하는 것은 이 연구가 처음. 모든 sample을 voxel grid로 만들어야하는 precomputation이 필요하다. quality를 높이기 위해 3d radiance field의 denoising network 학습이외에 render 된 2d image 상에서의 RGB loss와 마찬가지로 rendered image를 처리하는 CNN network를 추가하였다.
-  
-  
-  **Maximum Likelihood Training of Implicit Nonlinear Diffusion Models**\
-  *Dongjun Kim, Byeonghu Na, Se Jung Kwon, Dongsoo Lee, Wanmo Kang, Il-Chul Moon*\
-  NeurIPS22. [[Paper](https://arxiv.org/abs/2205.13699)]\
-  27 May 2022 \
-  Normalizing flow의 invertible한 성질을 적용하여, data adatible 한 nonlinear diffusion process를 implicit하게 학습. FID 성능을 올림.
-  
-  
-  
+    
   
 
 </details>
@@ -107,6 +53,8 @@ Reference text와 query text가 주어졌을때 두 텍스트를 적용했을때
   - [Introductory Videos](#introductory-videos)
 - [Papers](#papers)
   - [Must-read papers](#must-read-papers)
+  - [Stable diffusion freeze](#stable-diffusion-freeze)
+  - [Stable diffusion finetuning](#stable-diffusion-finetuning)
   - [Connection with other framworks](#connection-with-other-framworks)
   - [Image Generation](#image-generation)
   - [Image space guidance sampling](#image-space-guidance-sampling)
@@ -225,6 +173,47 @@ arXiv 2022. [[Paper](https://arxiv.org/abs/2206.00364)] \
 NeurIPS Workshop 2021. [[Paper](https://arxiv.org/abs/2207.12598)] \
 28 Sep 2021 \
 GAN으로 치면 condition GAN. 외부에서 classifier로 guidance를 주는 대신, UNet에 바로 컨디션을 꽂아줌. 이 때 수식을 classifier guidance랑 같아지도록 전개, 잘 됨. 현재 잘 되는 대부분의 모델들은 free guidance 방식으로 학습됨.
+
+## Stable Diffusion Freeze
+
+**GLIGEN: Open-Set Grounded Text-to-Image Generation** \
+*Yuheng Li, Haotian Liu, Qingyang Wu, Fangzhou Mu, Jianwei Yang, Jianfeng Gao, Chunyuan Li, Yong Jae Lee* \
+arXiv 2023. [[Paper](https://arxiv.org/abs/2301.07093)]\
+[Submitted on 17 Jan 2023]\
+Stable diffusion은 freeze 해 둔 채로 self attention과 cross attention 사이에 Gated Self attention layer를 추가하여 학습. Bounding box와 캡션, key point(스켈레톤), 이미지 가이드로 원하는 위치에 원하는 샘플을 넣을 수 있음. 잘되고, 실험 엄청 많이 해줌. 중간에 layer 넣는다는 점이 마음에 듬.
+
+**Null-text Inversion for Editing Real Images using Guided Diffusion Models** \
+*Ron Mokady, Amir Hertz, Kfir Aberman, Yael Pritch, Daniel Cohen-Or* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2211.09794)] \
+17 Nov 2022 \
+별도의 model fine-tuning 없이, real image 에 해당하는 null-text를 optimization 하여 prompt2prompt 방식으로 object의 semantic detail을 유지하면서 image editing을 가능하게함. 방법 좋은 결과 좋은. 괜찮은 논문.
+
+**DiffEdit: Diffusion-based semantic image editing with mask guidance** \
+*Guillaume Couairon, Jakob Verbeek, Holger Schwenk, Matthieu Cord* \
+Submitted to ICLR2023. [[Paper](https://arxiv.org/abs/2210.11427)] \
+20 Oct 2022 \
+Reference text와 query text가 주어졌을때 두 텍스트를 적용했을때의 noise estimates 차이로 마스크를 생성 - 생성한 마스크를 통해 DDIM decoding과정에서 encoding된 것과 적절히 합쳐서 text 부분만 edit하는 간단한 방법.
+
+**An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion** \
+*Rinon Gal, Yuval Alaluf, Yuval Atzmon, Or Patashnik, Amit H. Bermano, Gal Chechik, Daniel Cohen-Or* \
+arXiv 2022. ICLR2023 submission [[Paper](https://arxiv.org/abs/2208.01618)] \
+[Submitted on 2 Aug 2022] \
+이미지 3~5장을 S* 라는 문자로 inversion한다. GAN inversion과 유사. 이미지를 생성하는 과정에서 나오는 노이즈와 given image를 inversion 하는 과정에서 나오는 노이즈간의 MSE loss를 사용하여 "A photo of S*" 라는 prompt의 S*에 해당하는 토큰을 직접 optimize한다.
+
+
+## Stable Diffusion Finetuning
+
+**Paint by Example: Exemplar-based Image Editing with Diffusion Models** \
+*Binxin Yang, Shuyang Gu, Bo Zhang, Ting Zhang, Xuejin Chen, Xiaoyan Sun, Dong Chen, Fang Wen* \
+CVPR2023 submission. [[Paper](https://arxiv.org/abs/2211.13227)] \
+[Submitted on 23 Nov 2022] \
+유저가 지정한 영역에 컨디션으로 주어진 이미지의 semantic을 생성한 논문. 1. StableDiffusion으로 init 2. 이미지의 메인 오브젝트 패치를 떼어내고, CLIP 이미지 인코더에 augmentation해서 넣어준다. 이 때 CLIP을 1024까지 임베딩을 시켜버리고, 이걸 다시 리니어레이어 몇개 통과시켜서 컨디션으로 넣어줌. 3. 2번에 따라서 학습.  결과 좋음. 방법 좋음. 논문 잘 읽힘. 괜찮은 논문.
+
+** Multi-Concept Customization of Text-to-Image Diffusion ** \
+*Nupur Kumari, Bingliang Zhang, Richard Zhang, Eli Shechtman, Jun-Yan Zhu* \
+arxiv Submitted on 8 Dec 2022\ preprint [[Paper](https://arxiv.org/abs/2212.04488)] 
+ 1)model 일부만 fine-tuning + 2) text optimization 을 통해서 Large text-to-image Diffusion model을 few-shot user images 상에서 customizing 하는 논문
+
 
 ## Image Generation
 
