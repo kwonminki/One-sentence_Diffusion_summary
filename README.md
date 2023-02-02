@@ -209,7 +209,7 @@ CVPR2023 submission. [[Paper](https://arxiv.org/abs/2211.13227)] \
 [Submitted on 23 Nov 2022] \
 유저가 지정한 영역에 컨디션으로 주어진 이미지의 semantic을 생성한 논문. 1. StableDiffusion으로 init 2. 이미지의 메인 오브젝트 패치를 떼어내고, CLIP 이미지 인코더에 augmentation해서 넣어준다. 이 때 CLIP을 1024까지 임베딩을 시켜버리고, 이걸 다시 리니어레이어 몇개 통과시켜서 컨디션으로 넣어줌. 3. 2번에 따라서 학습.  결과 좋음. 방법 좋음. 논문 잘 읽힘. 괜찮은 논문.
 
-** Multi-Concept Customization of Text-to-Image Diffusion ** \
+**Multi-Concept Customization of Text-to-Image Diffusion** \
 *Nupur Kumari, Bingliang Zhang, Richard Zhang, Eli Shechtman, Jun-Yan Zhu* \
 arxiv Submitted on 8 Dec 2022\ preprint [[Paper](https://arxiv.org/abs/2212.04488)] 
  1)model 일부만 fine-tuning + 2) text optimization 을 통해서 Large text-to-image Diffusion model을 few-shot user images 상에서 customizing 하는 논문
