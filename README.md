@@ -20,6 +20,26 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
   arXiv 2023. [[Paper](https://arxiv.org/abs/2301.07093)]\
   [Submitted on 17 Jan 2023]\
   Stable diffusion은 freeze 해 둔 채로 self attention과 cross attention 사이에 Gated Self attention layer를 추가하여 학습. Bounding box와 캡션, key point(스켈레톤), 이미지 가이드로 원하는 위치에 원하는 샘플을 넣을 수 있음. 잘되고, 실험 엄청 많이 해줌. 중간에 layer 넣는다는 점이 마음에 듬.
+
+  **On distillation of guided diffusion models** \
+  *Chenlin Meng, Robin Rombach, Ruiqi Gao, Diederik P. Kingma, Stefano Ermon, Jonathan Ho, Tim Salimans* \
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2210.03142)]\
+  두번의 distillation 으로 step 을 1~4 step 으로 비약적으로 줄인다. LDM 의 경우 1 step 까지 가능하다. \
+  stage 1. classifier-free guidance 의 score 에 대한 student 모델 학습. \
+  stage 2. progressive-distillation 을 통해 step 수를 N/2 으로 계속 줄여나감. \
+  
+  **On the Importance of Noise Scheduling for Diffusion Models** \
+  *Ting Chen* \
+  arXiv 2023. [[Paper](https://arxiv.org/abs/2301.10972)]\
+  high resolution 에서는 같은 SNR 에서도 이미지가 덜 망가지는 것으로부터, resolution 별 새로운 noise scheduling 을 제안함. \
+  이미지가 클수록 정보가 살아남는 것으로부터 착안하여, signal 을 낮춰주는 $xt=\sqrt{\alpha} b x_0 + \sqrt{1 - \alpha} \epsilon 을 제안.\
+  +) UNet backbone 이 아닙니다.\
+  
+  **EDICT: Exact Diffusion Inversion via Coupled Transformations** \
+  *Bram Wallace, Akash Gokul, Nikhil Naik* \
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2211.12446)]\
+  DDIM inversion 과 Normalizing flow 에서 자주 사용되는 Affine coupling layer 의 수식이 동일하다는 점에서 착안하여, 완벽하게 inversion 되는 process 를 제안. \
+  text-conditional 일때나 guidance scale 이 클때도 reconstruction 성능이 좋습니다. \
   
   ### 18 Jan 2023
 
