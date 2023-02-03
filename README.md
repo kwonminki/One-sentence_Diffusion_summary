@@ -26,20 +26,20 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
   arXiv 2022. [[Paper](https://arxiv.org/abs/2210.03142)]\
   두번의 distillation 으로 step 을 1~4 step 으로 비약적으로 줄인다. LDM 의 경우 1 step 까지 가능하다. \
   stage 1. classifier-free guidance 의 score 에 대한 student 모델 학습. \
-  stage 2. progressive-distillation 을 통해 step 수를 N/2 으로 계속 줄여나감. \
+  stage 2. progressive-distillation 을 통해 step 수를 N/2 으로 계속 줄여나감.
   
   **On the Importance of Noise Scheduling for Diffusion Models** \
   *Ting Chen* \
   arXiv 2023. [[Paper](https://arxiv.org/abs/2301.10972)]\
   high resolution 에서는 같은 SNR 에서도 이미지가 덜 망가지는 것으로부터, resolution 별 새로운 noise scheduling 을 제안함. \
   이미지가 클수록 정보가 살아남는 것으로부터 착안하여, signal 을 낮춰주는 $xt=\sqrt{\alpha} b x_0 + \sqrt{1 - \alpha} \epsilon 을 제안.\
-  +) UNet backbone 이 아닙니다.\
+  +) UNet backbone 이 아닙니다.
   
   **EDICT: Exact Diffusion Inversion via Coupled Transformations** \
   *Bram Wallace, Akash Gokul, Nikhil Naik* \
   arXiv 2022. [[Paper](https://arxiv.org/abs/2211.12446)]\
   DDIM inversion 과 Normalizing flow 에서 자주 사용되는 Affine coupling layer 의 수식이 동일하다는 점에서 착안하여, 완벽하게 inversion 되는 process 를 제안. \
-  text-conditional 일때나 guidance scale 이 클때도 reconstruction 성능이 좋습니다. \
+  text-conditional 일때나 guidance scale 이 클때도 reconstruction 성능이 좋습니다.
   
   ### 18 Jan 2023
 
@@ -290,6 +290,14 @@ Normalizing flow의 invertible한 성질을 적용하여, data adatible 한 nonl
 arXiv 2022. [[Paper](https://arxiv.org/abs/2212.09748)] [[Project page](https://www.wpeebles.com/DiT)] [[Git](https://github.com/facebookresearch/DiT)]\
 [Submitted on 19 Dec 2022] \
 트랜스포머를 사용해서 이미지넷에서 SOTA. 기본적으로 VAE의 latent 상에서의 Diffusion이며, t랑 class를 concat 해서 mlp 하나 태우고, adaLN 을 적용시킴. 약간 LDM을 transformer로 구현한 느낌. 실험 좋고 내용 간단한데 굳이 열심히 읽어볼 필요는 없는 논문. \
+  
+**On the Importance of Noise Scheduling for Diffusion Models** \
+*Ting Chen* \
+arXiv 2023. [[Paper](https://arxiv.org/abs/2301.10972)]\
+high resolution 에서는 같은 SNR 에서도 이미지가 덜 망가지는 것으로부터, resolution 별 새로운 noise scheduling 을 제안함. \
+이미지가 클수록 정보가 살아남는 것으로부터 착안하여, signal 을 낮춰주는 $xt=\sqrt{\alpha} b x_0 + \sqrt{1 - \alpha} \epsilon 을 제안.\
++) UNet backbone 이 아닙니다.
+  
 
 
 ## Connection with other framworks
@@ -427,6 +435,12 @@ ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2210.10960)] [[Pr
 DDIM의 샘플링 공식 중 predicted x0 부분만 바꿔주면 U-Net의 bottle-neck 부분을 semantic latent space로 쓸 수 있음을 보여준 논문. Asyrp을 제안함. 잘됩니당 좋은 논문입니당 읽어주세요.
 
 
+**EDICT: Exact Diffusion Inversion via Coupled Transformations** \
+*Bram Wallace, Akash Gokul, Nikhil Naik* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2211.12446)]\
+DDIM inversion 과 Normalizing flow 에서 자주 사용되는 Affine coupling layer 의 수식이 동일하다는 점에서 착안하여, 완벽하게 inversion 되는 process 를 제안. \
+text-conditional 일때나 guidance scale 이 클때도 reconstruction 성능이 좋습니다.
+
 
 
 ## Text-focused
@@ -471,6 +485,13 @@ ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2206.05564)] \
 [Submitted on 11 Jun 2022] \
 DDPM, DDIM, 등등을 모두 SDE의 형태로 전환, Blur Diffusion이나 Critically-Damped Langevin Diffusion 까지도 SDE로 표현한 뒤, general한 form의 SDE -> DDIM을 만드는 방법을 제안한다. 이를 통해 istropic diffusion models까지 DDIM으로 fast sampling 가능하게 함. 
 
+  
+**On distillation of guided diffusion models** \
+*Chenlin Meng, Robin Rombach, Ruiqi Gao, Diederik P. Kingma, Stefano Ermon, Jonathan Ho, Tim Salimans* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2210.03142)]\
+두번의 distillation 으로 step 을 1~4 step 으로 비약적으로 줄인다. LDM 의 경우 1 step 까지 가능하다. \
+stage 1. classifier-free guidance 의 score 에 대한 student 모델 학습. \
+stage 2. progressive-distillation 을 통해 step 수를 N/2 으로 계속 줄여나감.
 
 ## Video Generation
 
