@@ -12,6 +12,12 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 
 <details>
   <summary>In the last month</summary>
+  
+  ### 06 Feb 2023
+  **Minimizing Trajectory Curvature of ODE-based Generative Models** \
+  *Sangyun Lee, Beomsu Kim, Jong Chul Ye*\
+  arxiv 27 Jan 2023 \
+  sampling trajectory의 curvature를 줄여서 학습된 denoising model에 ode solver 가 fit 하도록 만들고, 적은 step에서도 generation, reconstruction이 잘 되도록 시도함
 
   ### 02 Feb 2023
 
@@ -464,6 +470,13 @@ arXiv 2022. ICLR2023 submission [[Paper](https://arxiv.org/abs/2208.01618)] \
 
 
 ## Fast Sampling
+
+
+**Minimizing Trajectory Curvature of ODE-based Generative Models** \
+*Sangyun Lee, Beomsu Kim, Jong Chul Ye*\
+arxiv 27 Jan 2023 \
+sampling trajectory의 curvature를 줄여서 학습된 denoising model에 ode solver 가 fit 하도록 만들고, 적은 step에서도 generation, reconstruction이 잘 되도록 시도함
+
 
 **Learning Fast Samplers for Diffusion Models by Differentiating Through Sample Quality** \
 *Daniel Watson, William Chan, Jonathan Ho, Mohammad Norouzi* \
