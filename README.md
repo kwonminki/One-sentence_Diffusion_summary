@@ -13,10 +13,22 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 <details>
   <summary>In the last month</summary>
   
+  **Structure and Content-Guided Video Synthesis with Diffusion Models**\
+  *Patrick Esser, Johnathan Chiu, Parmida Atighehchian, Jonathan Granskog, Anastasis Germanidis*\
+  arXiv 2023. [[Paper](https://arxiv.org/abs/2302.03011)] [[Project Page](https://research.runwayml.com/gen1)]\
+  [Submitted on 6 Feb 2023] \
+  비디오2비디오 translation을 할 때, 이미 또는 텍스트로 가이드를 주는 논문. 비디오의 time에 따른 Spatio-temporal을 위해 temporal convolution/attention 네트워크를 삽입하였고, structure를 유지시키기 위해 depth estimation 을 사용하였음. 또한 훈련때 사용한 비디오를 CLIP image encoder에 태워, 기존 텍스트 대신 image로 condition을 줄 수 있도록 훈련함. 
+  
+  **Zero-shot Image-to-Image Translation**\
+*Gaurav Parmar, Krishna Kumar Singh, Richard Zhang, Yijun Li, Jingwan Lu, Jun-Yan Zhu*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2302.03027)] \
+6 Feb 2022 \
+별도의 user prompt 없이 source word(eg. dog) 와 target word(e.g. cat) 만 가지고 image translation하는 논문. 해당 단어가 포함된 여러개의 문장의 CLIP embedding 간의 차이를 editing direction으로 설정하여 inference 할때 text condition에 direction만 더하여 editing 가능, input image의 content structure 유지를 위해서 cross attention guidance를 제시(content와 background유지 굿), gaussian distribution유지를 위한 autocorrelation regularization 제안. 
+  
   ### 06 Feb 2023
   **Minimizing Trajectory Curvature of ODE-based Generative Models** \
   *Sangyun Lee, Beomsu Kim, Jong Chul Ye*\
-  arxiv 27 Jan 2023 [[Paper] (https://arxiv.org/abs/2301.12003)]\
+  arxiv 27 Jan 2023 [[Paper](https://arxiv.org/abs/2301.12003)]\
   sampling trajectory의 curvature를 줄여서 학습된 denoising model에 ode solver 가 fit 하도록 만들고, 적은 step에서도 generation, reconstruction이 잘 되도록 시도함
 
   ### 02 Feb 2023
@@ -201,6 +213,12 @@ NeurIPS Workshop 2021. [[Paper](https://arxiv.org/abs/2207.12598)] \
 GAN으로 치면 condition GAN. 외부에서 classifier로 guidance를 주는 대신, UNet에 바로 컨디션을 꽂아줌. 이 때 수식을 classifier guidance랑 같아지도록 전개, 잘 됨. 현재 잘 되는 대부분의 모델들은 free guidance 방식으로 학습됨.
 
 ## Stable Diffusion Freeze
+
+**Zero-shot Image-to-Image Translation**\
+*Gaurav Parmar, Krishna Kumar Singh, Richard Zhang, Yijun Li, Jingwan Lu, Jun-Yan Zhu*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2302.03027)] \
+6 Feb 2022 \
+별도의 user prompt 없이 source word(eg. dog) 와 target word(e.g. cat) 만 가지고 image translation하는 논문. 해당 단어가 포함된 여러개의 문장의 CLIP embedding 간의 차이를 editing direction으로 설정하여 inference 할때 text condition에 direction만 더하여 editing 가능, input image의 content structure 유지를 위해서 cross attention guidance를 제시(content와 background유지 굿), gaussian distribution유지를 위한 autocorrelation regularization 제안. 
 
 **GLIGEN: Open-Set Grounded Text-to-Image Generation** \
 *Yuheng Li, Haotian Liu, Qingyang Wu, Fangzhou Mu, Jianwei Yang, Jianfeng Gao, Chunyuan Li, Yong Jae Lee* \
@@ -519,6 +537,13 @@ stage 2. progressive-distillation 을 통해 step 수를 N/2 으로 계속 줄�
 arXiv 2022. [[Paper](https://arxiv.org/abs/2204.03458)] \
 7 April 2022 \
 Diffusion을 이용한 Video generation을 처음으로 한 논문, Video의 길이를 늘리고, quality를 높이는 것에 대한 방법제시.
+
+**Structure and Content-Guided Video Synthesis with Diffusion Models**\
+  *Patrick Esser, Johnathan Chiu, Parmida Atighehchian, Jonathan Granskog, Anastasis Germanidis*\
+  arXiv 2023. [[Paper](https://arxiv.org/abs/2302.03011)] [[Project Page](https://research.runwayml.com/gen1)]\
+  [Submitted on 6 Feb 2023] \
+  비디오2비디오 translation을 할 때, 이미 또는 텍스트로 가이드를 주는 논문. 비디오의 time에 따른 Spatio-temporal을 위해 temporal convolution/attention 네트워크를 삽입하였고, structure를 유지시키기 위해 depth estimation 을 사용하였음. 또한 훈련때 사용한 비디오를 CLIP image encoder에 태워, 기존 텍스트 대신 image로 condition을 줄 수 있도록 훈련함. 
+  
 
 ## 3D
 
