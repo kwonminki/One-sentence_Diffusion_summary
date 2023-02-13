@@ -386,6 +386,12 @@ Off-the-shelf model들의 사용으로 feature를 뽑아내고 클러스터링�
 
 ## Image Editing
 
+**Zero-shot Image-to-Image Translation**\
+*Gaurav Parmar, Krishna Kumar Singh, Richard Zhang, Yijun Li, Jingwan Lu, Jun-Yan Zhu*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2302.03027)] \
+6 Feb 2022 \
+별도의 user prompt 없이 source word(eg. dog) 와 target word(e.g. cat) 만 가지고 image translation하는 논문. 해당 단어가 포함된 여러개의 문장의 CLIP embedding 간의 차이를 editing direction으로 설정하여 inference 할때 text condition에 direction만 더하여 editing 가능, input image의 content structure 유지를 위해서 cross attention guidance를 제시(content와 background유지 굿), gaussian distribution유지를 위한 autocorrelation regularization 제안. 
+
 **Null-text Inversion for Editing Real Images using Guided Diffusion Models** \
 *Ron Mokady, Amir Hertz, Kfir Aberman, Yael Pritch, Daniel Cohen-Or* \
 arXiv 2022. [[Paper](https://arxiv.org/abs/2211.09794)] \
