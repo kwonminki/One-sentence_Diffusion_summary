@@ -24,8 +24,24 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 arXiv 2023. [[Paper](https://arxiv.org/abs/2302.03027)] \
 6 Feb 2022 \
 별도의 user prompt 없이 source word(eg. dog) 와 target word(e.g. cat) 만 가지고 image translation하는 논문. 해당 단어가 포함된 여러개의 문장의 CLIP embedding 간의 차이를 editing direction으로 설정하여 inference 할때 text condition에 direction만 더하여 editing 가능, input image의 content structure 유지를 위해서 cross attention guidance를 제시(content와 background유지 굿), gaussian distribution유지를 위한 autocorrelation regularization 제안. 
+
+  **Progressive Distillation for Fast Sampling of Diffusion Models**\
+  *Tim Salimans, Jonathan Ho*\
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2202.00512)] \
+  Faster sampling 을 목표로, denoising 2 step 을 예측하는 student 모델을 학습시킨다. 이때, $\epsilon$-prediction 을 하게 될 경우 기존과는 달리 numerical error 에 대한 correction 이 이뤄질 수 없어서 v-prediction 이라는 새로운 parameterization 을 제안함. (v-prediction 은 생각보다 자주 쓰이니 Appendix D 는 보기를 추천)
+
+  **Zero-Shot Image Restoration Using Denoising Diffusion Null-Space Model**\
+  *Yinhuai Wang, Jiwen Yu, Jian Zhang*\
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2212.00490)] \
+  Linear Degradation $\mathbf{A}$ 를 알고 있을때, Realness restoration 을 $\mathbf{A}$ 의 null-space 에서만 진행하는 방법을 제안. 실질적인 이미지 퀄리티 향상은 Repaint 에서 제안된 time-travel 기법을 통해 이뤄졌다. 
+  
+  **Adding Conditional Control to Text-to-Image Difusion Models**\
+  *Lvmin Zhang, Maneesh Agrawala*\
+  [[Code](https://github.com/lllyasviel/ControlNet)] \
+  어떤 condition 이든 학습할 수 있는 ControlNet 을 제안. Stable Diffusion encoder 의 copy 를 hypernetwork 처럼 활용하되, 학습의 안정성을 위해 zero-conv 를 도입한다. 
   
   ### 06 Feb 2023
+  
   **Minimizing Trajectory Curvature of ODE-based Generative Models** \
   *Sangyun Lee, Beomsu Kim, Jong Chul Ye*\
   arxiv 27 Jan 2023 [[Paper](https://arxiv.org/abs/2301.12003)]\
@@ -214,6 +230,11 @@ GAN으로 치면 condition GAN. 외부에서 classifier로 guidance를 주는 �
 
 ## Stable Diffusion Freeze
 
+**Adding Conditional Control to Text-to-Image Difusion Models**\
+*Lvmin Zhang, Maneesh Agrawala*\
+[[Code](https://github.com/lllyasviel/ControlNet)] \
+어떤 condition 이든 학습할 수 있는 ControlNet 을 제안. Stable Diffusion encoder 의 copy 를 hypernetwork 처럼 활용하되, 학습의 안정성을 위해 zero-conv 를 도입한다. 
+
 **Zero-shot Image-to-Image Translation**\
 *Gaurav Parmar, Krishna Kumar Singh, Richard Zhang, Yijun Li, Jingwan Lu, Jun-Yan Zhu*\
 arXiv 2023. [[Paper](https://arxiv.org/abs/2302.03027)] \
@@ -260,6 +281,13 @@ arxiv Submitted on 8 Dec 2022\ preprint [[Paper](https://arxiv.org/abs/2212.0448
 
 
 ## Image Generation
+
+**On the Importance of Noise Scheduling for Diffusion Models** \
+*Ting Chen* \
+arXiv 2023. [[Paper](https://arxiv.org/abs/2301.10972)]\
+high resolution 에서는 같은 SNR 에서도 이미지가 덜 망가지는 것으로부터, resolution 별 새로운 noise scheduling 을 제안함. \
+이미지가 클수록 정보가 살아남는 것으로부터 착안하여, signal 을 낮춰주는 $xt=\sqrt{\alpha} b x_0 + \sqrt{1 - \alpha} \epsilon 을 제안.\
++) UNet backbone 이 아닙니다.
 
 **eDiff-I: Text-to-Image Diffusion Models with an Ensemble of Expert Denoisers** \
 *Yogesh Balaji, Seungjun Nah, Xun Huang, Arash Vahdat, Jiaming Song, Karsten Kreis, Miika Aittala, Timo Aila, Samuli Laine, Bryan Catanzaro, Tero Karras, Ming-Yu Liu*\
@@ -464,7 +492,6 @@ ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2210.10960)] [[Pr
 [Submitted on 20 Oct 2022] \
 DDIM의 샘플링 공식 중 predicted x0 부분만 바꿔주면 U-Net의 bottle-neck 부분을 semantic latent space로 쓸 수 있음을 보여준 논문. Asyrp을 제안함. 잘됩니당 좋은 논문입니당 읽어주세요.
 
-
 **EDICT: Exact Diffusion Inversion via Coupled Transformations** \
 *Bram Wallace, Akash Gokul, Nikhil Naik* \
 arXiv 2022. [[Paper](https://arxiv.org/abs/2211.12446)]\
@@ -495,12 +522,22 @@ arXiv 2022. ICLR2023 submission [[Paper](https://arxiv.org/abs/2208.01618)] \
 
 ## Fast Sampling
 
+**Progressive Distillation for Fast Sampling of Diffusion Models**\
+  *Tim Salimans, Jonathan Ho*\
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2202.00512)] \
+  Faster sampling 을 목표로, denoising 2 step 을 예측하는 student 모델을 학습시킨다. 이때, $\epsilon$-prediction 을 하게 될 경우 기존과는 달리 numerical error 에 대한 correction 이 이뤄질 수 없어서 v-prediction 이라는 새로운 parameterization 을 제안함. (v-prediction 은 생각보다 자주 쓰이니 Appendix D 는 보기를 추천)
+  
+**On distillation of guided diffusion models** \
+*Chenlin Meng, Robin Rombach, Ruiqi Gao, Diederik P. Kingma, Stefano Ermon, Jonathan Ho, Tim Salimans* \
+arXiv 2022. [[Paper](https://arxiv.org/abs/2210.03142)]\
+두번의 distillation 으로 step 을 1~4 step 으로 비약적으로 줄인다. LDM 의 경우 1 step 까지 가능하다. \
+stage 1. classifier-free guidance 의 score 에 대한 student 모델 학습. \
+stage 2. progressive-distillation 을 통해 step 수를 N/2 으로 계속 줄여나감.
 
 **Minimizing Trajectory Curvature of ODE-based Generative Models** \
 *Sangyun Lee, Beomsu Kim, Jong Chul Ye*\
 arxiv 27 Jan 2023 [[Paper] (https://arxiv.org/abs/2301.12003)]\
 sampling trajectory의 curvature를 줄여서 학습된 denoising model에 ode solver 가 fit 하도록 만들고, 적은 step에서도 generation, reconstruction이 잘 되도록 시도함
-
 
 **Learning Fast Samplers for Diffusion Models by Differentiating Through Sample Quality** \
 *Daniel Watson, William Chan, Jonathan Ho, Mohammad Norouzi* \
@@ -521,14 +558,6 @@ stable diffusion에서 사용된 sampling방식이고 성능이 좋다.
 ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2206.05564)] \
 [Submitted on 11 Jun 2022] \
 DDPM, DDIM, 등등을 모두 SDE의 형태로 전환, Blur Diffusion이나 Critically-Damped Langevin Diffusion 까지도 SDE로 표현한 뒤, general한 form의 SDE -> DDIM을 만드는 방법을 제안한다. 이를 통해 istropic diffusion models까지 DDIM으로 fast sampling 가능하게 함. 
-
-  
-**On distillation of guided diffusion models** \
-*Chenlin Meng, Robin Rombach, Ruiqi Gao, Diederik P. Kingma, Stefano Ermon, Jonathan Ho, Tim Salimans* \
-arXiv 2022. [[Paper](https://arxiv.org/abs/2210.03142)]\
-두번의 distillation 으로 step 을 1~4 step 으로 비약적으로 줄인다. LDM 의 경우 1 step 까지 가능하다. \
-stage 1. classifier-free guidance 의 score 에 대한 student 모델 학습. \
-stage 2. progressive-distillation 을 통해 step 수를 N/2 으로 계속 줄여나감.
 
 ## Video Generation
 
