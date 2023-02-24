@@ -13,6 +13,27 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 <details>
   <summary>In the last month</summary>
   
+  ### 24 Feb 2023
+  **MagicVideo: Efficient Video Generation With Latent Diffusion Models**\
+  *Daquan Zhou, Weimin Wang, Hanshu Yan, Weiwei Lv, Yizhe Zhu, Jiashi Feng*\
+  arXiv 2023. [[Paper](https://arxiv.org/abs/2211.11018)] [[Project Page](https://magicvideo.github.io/#)]\
+  [Submitted on 20 Nov 2022]\
+  비디오를 가지고 훈련시키는 데, adaptor 라는 개념을 추가하여, frame 간의 관계 정보를 공유하도록 한다. 이 때 Directed Temporal Attention 을 사용해서 - Masked Self attention과 거의 동일한 개념.- 뒤쪽 frame에게만 영향을 끼치도록 만듬. 나쁘지 않은 논문.
+  
+  **SmartBrush: Text and Shape Guided Object Inpainting with Diffusion Model**\
+  *Shaoan Xie, Zhifei Zhang, Zhe Lin, Tobias Hinz, Kun Zhang*\
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2212.05034)]\
+  [Submitted on 9 Dec 2022]\
+  마스크를 주면 거기에 텍스트에 해당하는 이미지 생성. 기본적으로 모델을 훈련을 시키는데, 마스크에 가우시안 블러커널을 통과시키고, 생성되는 이미지에서 마스크를 predict 하게 하여 predict된 마스크 영역만 대체하는 방식으로 background를 최대한 지킨다. 실제로 생성 영역을 넓게 잡아도 background가 상당히 잘 유지된다.
+  
+  **Boundary Guided Mixing Trajectory for Semantic Control with Diffusion Models**\
+  *Ye Zhu, Yu Wu, Zhiwei Deng, Olga Russakovsky, Yan Yan*\
+  arXiv 2023. [[Paper](https://arxiv.org/abs/2212.05034)]\
+  [Submitted on 16 Feb 2023]\
+  Asyrp을 사용하면 (Diffusion models already have a semantic latent space) 생기는 문제를 inversion 이미지와 generated 이미지의 xT 분포를 가지고 분석함. inversion한 이미지가 가우시안 분포 껍질 안쪽에 있다고 말하고, 이걸 맞춰주는 방식을 제안함. - 제대로 안읽어서 추후 업데이트 예정.
+  
+  ### 16 Feb 2023
+  
   **Structure and Content-Guided Video Synthesis with Diffusion Models**\
   *Patrick Esser, Johnathan Chiu, Parmida Atighehchian, Jonathan Granskog, Anastasis Germanidis*\
   arXiv 2023. [[Paper](https://arxiv.org/abs/2302.03011)] [[Project Page](https://research.runwayml.com/gen1)]\
@@ -75,26 +96,7 @@ arXiv 2023. [[Paper](https://arxiv.org/abs/2302.03027)] \
   DDIM inversion 과 Normalizing flow 에서 자주 사용되는 Affine coupling layer 의 수식이 동일하다는 점에서 착안하여, 완벽하게 inversion 되는 process 를 제안. \
   text-conditional 일때나 guidance scale 이 클때도 reconstruction 성능이 좋습니다.
   
-  ### 18 Jan 2023
 
-  **Multi-Concept Customization of Text-to-Image Diffusion** \
-  *Nupur Kumari, Bingliang Zhang, Richard Zhang, Eli Shechtman, Jun-Yan Zhu* \
-  arxiv Submitted on 8 Dec 2022\ preprint [[Paper](https://arxiv.org/abs/2212.04488)] 
-   1)model 일부만 fine-tuning + 2) text optimization 을 통해서 Large text-to-image Diffusion model을 few-shot user images 상에서 customizing 하는 논문
-  
-  **eDiff-I: Text-to-Image Diffusion Models with an Ensemble of Expert Denoisers** \
-  *Yogesh Balaji, Seungjun Nah, Xun Huang, Arash Vahdat, Jiaming Song, Karsten Kreis, Miika Aittala, Timo Aila, Samuli Laine, Bryan Catanzaro, Tero Karras, Ming-Yu Liu*\
-  arxiv [Submitted on 2 Nov 2022 (v1), last revised 17 Nov 2022 (this version, v4)]\
-   Nvidia version large text-to-image model, 한개의 diffusion model말고 각 stpe별로 여러개의 network를 학습시켜 ensemble한다.
-  
-  ### 09 Jan 2023
-  
-  **Scalable Diffusion Models with Transformers** \
-  *William Peebles, Saining Xie* \
-  arXiv 2022. [[Paper](https://arxiv.org/abs/2212.09748)] [[Project page](https://www.wpeebles.com/DiT)] [[Git](https://github.com/facebookresearch/DiT)]\
-  [Submitted on 19 Dec 2022] \
-  트랜스포머를 사용해서 이미지넷에서 SOTA. 기본적으로 VAE의 latent 상에서의 Diffusion이며, t랑 class를 concat 해서 mlp 하나 태우고, adaLN 을 적용시킴. 약간 LDM을 transformer로 구현한 느낌. 실험 좋고 내용 간단한데 굳이 열심히 읽어볼 필요는 없는 논문.
-    
   
 
 </details>
@@ -279,6 +281,12 @@ CVPR2023 submission. [[Paper](https://arxiv.org/abs/2211.13227)] \
 arxiv Submitted on 8 Dec 2022\ preprint [[Paper](https://arxiv.org/abs/2212.04488)] 
  1)model 일부만 fine-tuning + 2) text optimization 을 통해서 Large text-to-image Diffusion model을 few-shot user images 상에서 customizing 하는 논문
 
+  **SmartBrush: Text and Shape Guided Object Inpainting with Diffusion Model**\
+  *Shaoan Xie, Zhifei Zhang, Zhe Lin, Tobias Hinz, Kun Zhang*\
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2212.05034)]\
+  [Submitted on 9 Dec 2022]\
+  마스크를 주면 거기에 텍스트에 해당하는 이미지 생성. 기본적으로 모델을 훈련을 시키는데, 마스크에 가우시안 블러커널을 통과시키고, 생성되는 이미지에서 마스크를 predict 하게 하여 predict된 마스크 영역만 대체하는 방식으로 background를 최대한 지킨다. 실제로 생성 영역을 넓게 잡아도 background가 상당히 잘 유지된다.
+
 
 ## Image Generation
 
@@ -432,6 +440,11 @@ Off-the-shelf model들의 사용으로 feature를 뽑아내고 클러스터링�
 
 ## Image Editing
 
+ **Zero-Shot Image Restoration Using Denoising Diffusion Null-Space Model**\
+  *Yinhuai Wang, Jiwen Yu, Jian Zhang*\
+  arXiv 2022. [[Paper](https://arxiv.org/abs/2212.00490)] \
+  Linear Degradation $\mathbf{A}$ 를 알고 있을때, Realness restoration 을 $\mathbf{A}$ 의 null-space 에서만 진행하는 방법을 제안. 실질적인 이미지 퀄리티 향상은 Repaint 에서 제안된 time-travel 기법을 통해 이뤄졌다. 
+
 **Zero-shot Image-to-Image Translation**\
 *Gaurav Parmar, Krishna Kumar Singh, Richard Zhang, Yijun Li, Jingwan Lu, Jun-Yan Zhu*\
 arXiv 2023. [[Paper](https://arxiv.org/abs/2302.03027)] \
@@ -498,13 +511,19 @@ arXiv 2022. [[Paper](https://arxiv.org/abs/2211.12446)]\
 DDIM inversion 과 Normalizing flow 에서 자주 사용되는 Affine coupling layer 의 수식이 동일하다는 점에서 착안하여, 완벽하게 inversion 되는 process 를 제안. \
 text-conditional 일때나 guidance scale 이 클때도 reconstruction 성능이 좋습니다.
 
-
+  **Boundary Guided Mixing Trajectory for Semantic Control with Diffusion Models**\
+  *Ye Zhu, Yu Wu, Zhiwei Deng, Olga Russakovsky, Yan Yan*\
+  arXiv 2023. [[Paper](https://arxiv.org/abs/2212.05034)]\
+  [Submitted on 16 Feb 2023]\
+  Asyrp을 사용하면 (Diffusion models already have a semantic latent space) 생기는 문제를 inversion 이미지와 generated 이미지의 xT 분포를 가지고 분석함. inversion한 이미지가 가우시안 분포 껍질 안쪽에 있다고 말하고, 이걸 맞춰주는 방식을 제안함. - 제대로 안읽어서 추후 업데이트 예정.
+  
 
 ## Text-focused
 
-** Multi-Concept Customization of Text-to-Image Diffusion ** \
+**Multi-Concept Customization of Text-to-Image Diffusion** \
 *Nupur Kumari, Bingliang Zhang, Richard Zhang, Eli Shechtman, Jun-Yan Zhu* \
-arxiv Submitted on 8 Dec 2022\ preprint [[Paper](https://arxiv.org/abs/2212.04488)] 
+arxiv Submitted on 8 Dec 2022 \ 
+preprint [[Paper](https://arxiv.org/abs/2212.04488)] \
  1)model 일부만 fine-tuning + 2) text optimization 을 통해서 Large text-to-image Diffusion model을 few-shot user images 상에서 customizing 하는 논문
 
 **Optimizing Prompts for Text-to-Image Generation** \
@@ -573,6 +592,11 @@ Diffusion을 이용한 Video generation을 처음으로 한 논문, Video의 길
   [Submitted on 6 Feb 2023] \
   비디오2비디오 translation을 할 때, 이미 또는 텍스트로 가이드를 주는 논문. 비디오의 time에 따른 Spatio-temporal을 위해 temporal convolution/attention 네트워크를 삽입하였고, structure를 유지시키기 위해 depth estimation 을 사용하였음. 또한 훈련때 사용한 비디오를 CLIP image encoder에 태워, 기존 텍스트 대신 image로 condition을 줄 수 있도록 훈련함. 
   
+    **MagicVideo: Efficient Video Generation With Latent Diffusion Models**\
+  *Daquan Zhou, Weimin Wang, Hanshu Yan, Weiwei Lv, Yizhe Zhu, Jiashi Feng*\
+  arXiv 2023. [[Paper](https://arxiv.org/abs/2211.11018)] [[Project Page](https://magicvideo.github.io/#)]\
+  [Submitted on 20 Nov 2022]\
+  비디오를 가지고 훈련시키는 데, adaptor 라는 개념을 추가하여, frame 간의 관계 정보를 공유하도록 한다. 이 때 Directed Temporal Attention 을 사용해서 - Masked Self attention과 거의 동일한 개념.- 뒤쪽 frame에게만 영향을 끼치도록 만듬. 나쁘지 않은 논문.
 
 ## 3D
 
