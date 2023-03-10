@@ -3,7 +3,7 @@
 
 # One-Sentence_Diffusion_summary
 The repo for studying and sharing diffusion models. (Korean) \
-Computer Vision with Diffusion models \
+Computer Vision with Diffusion models
 
 Thanks to 정재석, 박용현 🥰
 
@@ -14,6 +14,20 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 
 <details>
   <summary>In the last month</summary>
+  
+  ### 10 Mar. 2023
+  **On Calibrating Diffusion Probabilistic Models**\
+  *Tianyu Pang, Cheng Lu, Chao Du, Min Lin, Shuicheng Yan, Zhijie Deng*\
+  arXiv 2023. [[Paper](https://arxiv.org/abs/2302.10688)] [[Code](https://github.com/thudzj/Calibrated-DPMs)]\
+  [Submitted on 21 Feb 2023]\
+  각 스텝에서 예측된 스코어의 합이 0이 되어야 한다고 주장. 이를 위해서 Theorem 1을 제안하는데, ∀0≤s<t≤T 일때 s에서 구한 스코어와 t에서 구한 스코어가 같다는 말을 한다. -(xs|xt)일때- 용현님의 생각은 이 Theorem 1이 DDIM이 왜 잘 동작하는지 보여주고 있으며, gDDIM에서 주장하는 바와도 연관된다고 평가하심. 이를 확장하여 x0의 스코어의 평균이 0이니 xt의 스코어의 평균이 0이어야 한다는 주장을 한다. (Eq.13) 이건 공감 못하셨다. 이를 만족시킬 수 있는 예타t를 스코어에 넣는 방법을 제안했고, 이를 통해 DPM-Solver의 성능을 모든 NFE에서 올렸다.
+
+**Improving Score-based Diffusion Models by Enforcing the Underlying Score Fokker-Planck Equation**\
+*Chieh-Hsin Lai, Yuhta Takida, Naoki Murata, Toshimitsu Uesaka, Yuki Mitsufuji, Stefano Ermon*\
+NeurIPS 2022 Workshop. [[Paper](https://arxiv.org/abs/2210.04296)]\
+Submitted on 9 Oct 2022 (v1)\
+Fokker-Planck Equations은 브라운운동에서 한 샘플의 움직임이 아니라 전체 distribution이 어떻게 움직이지는지에 관련된 수식이다. 이를 Eq.6에서 보여주고 있는데, t~=0 일 때 Fokker-Planck Equations에 위반되는 모습이 보여진다고 주장한다. 이를 감마FP 텀을 가지고 조절해줘서 맞춰주는데, 실험이 많지는 않다. 워크샵 페이퍼이다.
+  
   
   ### 24 Feb 2023
   **MagicVideo: Efficient Video Generation With Latent Diffusion Models**\
@@ -122,6 +136,7 @@ arXiv 2023. [[Paper](https://arxiv.org/abs/2302.03027)] \
   - [Fast Sampling](#fast-sampling)
   - [Video Generation](#video-generation)
   - [3D](#3d)
+  - [수학기반향상](#수학기반향상)
   - [기타](#기타)
     
   
@@ -594,7 +609,7 @@ Diffusion을 이용한 Video generation을 처음으로 한 논문, Video의 길
   [Submitted on 6 Feb 2023] \
   비디오2비디오 translation을 할 때, 이미 또는 텍스트로 가이드를 주는 논문. 비디오의 time에 따른 Spatio-temporal을 위해 temporal convolution/attention 네트워크를 삽입하였고, structure를 유지시키기 위해 depth estimation 을 사용하였음. 또한 훈련때 사용한 비디오를 CLIP image encoder에 태워, 기존 텍스트 대신 image로 condition을 줄 수 있도록 훈련함. 
   
-    **MagicVideo: Efficient Video Generation With Latent Diffusion Models**\
+**MagicVideo: Efficient Video Generation With Latent Diffusion Models**\
   *Daquan Zhou, Weimin Wang, Hanshu Yan, Weiwei Lv, Yizhe Zhu, Jiashi Feng*\
   arXiv 2023. [[Paper](https://arxiv.org/abs/2211.11018)] [[Project Page](https://magicvideo.github.io/#)]\
   [Submitted on 20 Nov 2022]\
@@ -608,6 +623,19 @@ arXiv 2022. [[Paper](https://arxiv.org/abs/2212.01206)] \
 2 Dec 2022 \
 Diffusion 으로 3d radiacne field generation한 논문. 이전에 DreamFusion이나 GAUDI 와 같이 diffusion으로 3D generation하는 works이 있었지만, 3d unet 을 활용하여 3d Radiance field를 직접 denoise하는 것은 이 연구가 처음. 모든 sample을 voxel grid로 만들어야하는 precomputation이 필요하다. quality를 높이기 위해 3d radiance field의 denoising network 학습이외에 render 된 2d image 상에서의 RGB loss와 마찬가지로 rendered image를 처리하는 CNN network를 추가하였다.\
 
+## 수학기반향상
+
+**On Calibrating Diffusion Probabilistic Models**\
+*Tianyu Pang, Cheng Lu, Chao Du, Min Lin, Shuicheng Yan, Zhijie Deng*\
+  arXiv 2023. [[Paper](https://arxiv.org/abs/2302.10688)] [[Code](https://github.com/thudzj/Calibrated-DPMs)]\
+  [Submitted on 21 Feb 2023]\
+  각 스텝에서 예측된 스코어의 합이 0이 되어야 한다고 주장. 이를 위해서 Theorem 1을 제안하는데, ∀0≤s<t≤T 일때 s에서 구한 스코어와 t에서 구한 스코어가 같다는 말을 한다. -(xs|xt)일때- 용현님의 생각은 이 Theorem 1이 DDIM이 왜 잘 동작하는지 보여주고 있으며, gDDIM에서 주장하는 바와도 연관된다고 평가하심. 이를 확장하여 x0의 스코어의 평균이 0이니 xt의 스코어의 평균이 0이어야 한다는 주장을 한다. (Eq.13) 이건 공감 못하셨다. 이를 만족시킬 수 있는 예타t를 스코어에 넣는 방법을 제안했고, 이를 통해 DPM-Solver의 성능을 모든 NFE에서 올렸다.
+
+**Improving Score-based Diffusion Models by Enforcing the Underlying Score Fokker-Planck Equation**\
+*Chieh-Hsin Lai, Yuhta Takida, Naoki Murata, Toshimitsu Uesaka, Yuki Mitsufuji, Stefano Ermon*\
+NeurIPS 2022 Workshop. [[Paper](https://arxiv.org/abs/2210.04296)]\
+Submitted on 9 Oct 2022 (v1)\
+Fokker-Planck Equations은 브라운운동에서 한 샘플의 움직임이 아니라 전체 distribution이 어떻게 움직이지는지에 관련된 수식이다. 이를 Eq.6에서 보여주고 있는데, t~=0 일 때 Fokker-Planck Equations에 위반되는 모습이 보여진다고 주장한다. 이를 감마FP 텀을 가지고 조절해줘서 맞춰주는데, 실험이 많지는 않다. 워크샵 페이퍼이다.
 
 ## 기타
 
