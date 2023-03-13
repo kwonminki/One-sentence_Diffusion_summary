@@ -570,7 +570,7 @@ text-conditional 일때나 guidance scale 이 클때도 reconstruction 성능이
 
   **Boundary Guided Mixing Trajectory for Semantic Control with Diffusion Models**\
   *Ye Zhu, Yu Wu, Zhiwei Deng, Olga Russakovsky, Yan Yan*\
-  arXiv 2023. [[Paper](https://arxiv.org/abs/2212.05034)]\
+  arXiv 2023. [[Paper](https://arxiv.org/abs/2302.08357)]\
   [Submitted on 16 Feb 2023]\
   Asyrp을 사용하면 (Diffusion models already have a semantic latent space) 생기는 문제를 inversion 이미지와 generated 이미지의 xT 분포를 가지고 분석함. inversion한 이미지가 가우시안 분포 껍질 안쪽에 있다고 말하고, 이걸 맞춰주는 방식을 제안함. - 제대로 안읽어서 추후 업데이트 예정.
   
