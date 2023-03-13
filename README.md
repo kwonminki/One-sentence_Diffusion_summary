@@ -15,6 +15,26 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 <details>
   <summary>In the last month</summary>
   
+  ### 13 Mar. 2023
+  **Adding Conditional Control to Text-to-Image Diffusion Models**\
+  *Lvmin Zhang, Maneesh Agrawala*\
+  arXiv 2023. [[Paper](https://arxiv.org/abs/2302.05543)] [[Code](https://github.com/lllyasviel/ControlNet)]\
+  [Submitted on 10 Feb 2023]\
+  컨디션을 처리해주는 네트워크를 하나 만들고, UNet의 feature에다가 꽂아준다. 일명 ControlNet. 엄청 잘된다. Asyrp의 상위호완 느낌이랄까
+  
+  **On Calibrating Diffusion Probabilistic Models**\
+  *Tianyu Pang, Cheng Lu, Chao Du, Min Lin, Shuicheng Yan, Zhijie Deng*\
+  arXiv 2023. [[Paper](https://arxiv.org/abs/2302.10688)] [[Code](https://github.com/thudzj/Calibrated-DPMs)]\
+  [Submitted on 21 Feb 2023]\
+  모델의 아웃풋인 스코어도 마팅게일을 만족해야 한다고 주장한다. SDE식을 만족한다는 것은 xt가 마팅게일이라는 의미이기도 한데, 직접적으로 스코어가 마팅게일이어야 한다고 말한 논문은 이게 처음인 듯 하다. 조금 어렵다.
+  
+  **Unsupervised Discovery of Semantic Latent Directions in Diffusion Models**\
+  *Yong-Hyun Park, Mingi Kwon, Junghyo Jo, Youngjung Uh*\
+  arXiv 2023. [[Paper](https://arxiv.org/abs/2302.12469)]\
+  [Submitted on 24 Feb 2023]\
+  UNet의 bottleneck이 local하게 linear하다는 성질을 사용하여 리만기하학을 사용한 unsupervised editing direction을 찾는 방법을 제안한 논문이다. 갓용현님의 첫번째 논문이며 나름 좋은 논문이다. 읽어주세염! 참고로, Diffusion models editing에서 보지 못했던 pose 변화 editing을 보여주고 있다. Stable diffusion에서도 editing이 된다.
+
+  
   ### 10 Mar. 2023
   **On Calibrating Diffusion Probabilistic Models**\
   *Tianyu Pang, Cheng Lu, Chao Du, Min Lin, Shuicheng Yan, Zhijie Deng*\
@@ -284,6 +304,19 @@ arXiv 2022. ICLR2023 submission [[Paper](https://arxiv.org/abs/2208.01618)] \
 [Submitted on 2 Aug 2022] \
 이미지 3~5장을 S* 라는 문자로 inversion한다. GAN inversion과 유사. 이미지를 생성하는 과정에서 나오는 노이즈와 given image를 inversion 하는 과정에서 나오는 노이즈간의 MSE loss를 사용하여 "A photo of S*" 라는 prompt의 S*에 해당하는 토큰을 직접 optimize한다.
 
+**Adding Conditional Control to Text-to-Image Diffusion Models**\
+*Lvmin Zhang, Maneesh Agrawala*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2302.05543)] [[Code](https://github.com/lllyasviel/ControlNet)]\
+[Submitted on 10 Feb 2023]\
+컨디션을 처리해주는 네트워크를 하나 만들고, UNet의 feature에다가 꽂아준다. 일명 ControlNet. 엄청 잘된다. Asyrp의 상위호완 느낌이랄까
+  
+  
+**Unsupervised Discovery of Semantic Latent Directions in Diffusion Models**\
+*Yong-Hyun Park, Mingi Kwon, Junghyo Jo, Youngjung Uh*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2302.12469)]\
+[Submitted on 24 Feb 2023]\
+UNet의 bottleneck이 local하게 linear하다는 성질을 사용하여 리만기하학을 사용한 unsupervised editing direction을 찾는 방법을 제안한 논문이다. 갓용현님의 첫번째 논문이며 나름 좋은 논문이다. 읽어주세염! 참고로, Diffusion models editing에서 보지 못했던 pose 변화 editing을 보여주고 있다. Stable diffusion에서도 editing이 된다.
+
 
 ## Stable Diffusion Finetuning
 
@@ -457,10 +490,17 @@ Off-the-shelf model들의 사용으로 feature를 뽑아내고 클러스터링�
 
 ## Image Editing
 
- **Zero-Shot Image Restoration Using Denoising Diffusion Null-Space Model**\
-  *Yinhuai Wang, Jiwen Yu, Jian Zhang*\
-  arXiv 2022. [[Paper](https://arxiv.org/abs/2212.00490)] \
-  Linear Degradation $\mathbf{A}$ 를 알고 있을때, Realness restoration 을 $\mathbf{A}$ 의 null-space 에서만 진행하는 방법을 제안. 실질적인 이미지 퀄리티 향상은 Repaint 에서 제안된 time-travel 기법을 통해 이뤄졌다. 
+**Unsupervised Discovery of Semantic Latent Directions in Diffusion Models**\
+*Yong-Hyun Park, Mingi Kwon, Junghyo Jo, Youngjung Uh*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2302.12469)]\
+[Submitted on 24 Feb 2023]\
+UNet의 bottleneck이 local하게 linear하다는 성질을 사용하여 리만기하학을 사용한 unsupervised editing direction을 찾는 방법을 제안한 논문이다. 갓용현님의 첫번째 논문이며 나름 좋은 논문이다. 읽어주세염! 참고로, Diffusion models editing에서 보지 못했던 pose 변화 editing을 보여주고 있다. Stable diffusion에서도 editing이 된다.
+
+
+**Zero-Shot Image Restoration Using Denoising Diffusion Null-Space Model**\
+*Yinhuai Wang, Jiwen Yu, Jian Zhang*\
+arXiv 2022. [[Paper](https://arxiv.org/abs/2212.00490)] \
+Linear Degradation $\mathbf{A}$ 를 알고 있을때, Realness restoration 을 $\mathbf{A}$ 의 null-space 에서만 진행하는 방법을 제안. 실질적인 이미지 퀄리티 향상은 Repaint 에서 제안된 time-travel 기법을 통해 이뤄졌다. 
 
 **Zero-shot Image-to-Image Translation**\
 *Gaurav Parmar, Krishna Kumar Singh, Richard Zhang, Yijun Li, Jingwan Lu, Jun-Yan Zhu*\
@@ -518,7 +558,7 @@ Stable Diffusion의 4th layer의 featuremap과 4-11th laeyr의 self attention Q,
 
 **Diffusion Models already have a Semantic Latent Space** \
 *Mingi Kwon, Jaeseok Jeong, Youngjung Uh* \
-ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2210.10960)] [[Project page](https://kwonminki.github.io/Asyrp/)] \
+ICLR 2023 Spotlight / preprint [[Paper](https://arxiv.org/abs/2210.10960)] [[Project page](https://kwonminki.github.io/Asyrp/)] \
 [Submitted on 20 Oct 2022] \
 DDIM의 샘플링 공식 중 predicted x0 부분만 바꿔주면 U-Net의 bottle-neck 부분을 semantic latent space로 쓸 수 있음을 보여준 논문. Asyrp을 제안함. 잘됩니당 좋은 논문입니당 읽어주세요.
 
@@ -636,6 +676,12 @@ Diffusion 으로 3d radiacne field generation한 논문. 이전에 DreamFusion�
 NeurIPS 2022 Workshop. [[Paper](https://arxiv.org/abs/2210.04296)]\
 Submitted on 9 Oct 2022 (v1)\
 Fokker-Planck Equations은 브라운운동에서 한 샘플의 움직임이 아니라 전체 distribution이 어떻게 움직이지는지에 관련된 수식이다. 이를 Eq.6에서 보여주고 있는데, t~=0 일 때 Fokker-Planck Equations에 위반되는 모습이 보여진다고 주장한다. 이를 감마FP 텀을 가지고 조절해줘서 맞춰주는데, 실험이 많지는 않다. 워크샵 페이퍼이다.
+
+**On Calibrating Diffusion Probabilistic Models**\
+*Tianyu Pang, Cheng Lu, Chao Du, Min Lin, Shuicheng Yan, Zhijie Deng*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2302.10688)] [[Code](https://github.com/thudzj/Calibrated-DPMs)]\
+[Submitted on 21 Feb 2023]\
+모델의 아웃풋인 스코어도 마팅게일을 만족해야 한다고 주장한다. SDE식을 만족한다는 것은 xt가 마팅게일이라는 의미이기도 한데, 직접적으로 스코어가 마팅게일이어야 한다고 말한 논문은 이게 처음인 듯 하다. 조금 어렵다.
 
 ## 기타
 
