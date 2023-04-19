@@ -340,6 +340,7 @@ GAN으로 치면 condition GAN. 외부에서 classifier로 guidance를 주는 �
 
 ## Personalized
 
+따로 모을 필요가 느껴져서 목록을 새로 만들었습니다. 아직 모아놓지 않았습니다. 곧 모아볼게요.
 
 **InstantBooth: Personalized Text-to-Image Generation without Test-Time Finetuning**\
 *Jing Shi, Wei Xiong, Zhe Lin, Hyun Joon Jung*\
