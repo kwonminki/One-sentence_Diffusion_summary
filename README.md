@@ -16,34 +16,71 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
   <summary>In the last month</summary>
   
  ### 19 Apr. 2023
- **Latent-Shift: Latent Diffusion with Temporal Shift for Efficient Text-to-Video Generation **
-*Jie An1;2* Songyang Zhang1;2* Harry Yang2 Sonal Gupta2 Jia-Bin Huang2;3 Jiebo Luo1;2 Xi Yin2*
-arXiv 2023. [Paper](https://arxiv.org/pdf/2304.08477.pdf)] [[Project Page(https://latent-shift.github.io/)]
-[Submitted on 17 Apr 2023]
+
+**InstantBooth: Personalized Text-to-Image Generation without Test-Time Finetuning**\
+*Jing Shi, Wei Xiong, Zhe Lin, Hyun Joon Jung*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2304.03411)]\
+[Submitted on 6 Apr 2023]\
+1.texture inversion 처럼 토큰 하나 만들어주는 encoder를 학습시킴. 2. 이미지를 패치로 쪼개서 패치별 feature를 모아서 concat함. 3. cross att와 self att 사이에 adapter를 하나 넣어서 이미지를 생성함. 이 3단계로 personalize하는 논문. 개인적으로 패치단위로 쪼개서 feature를 뽑는 방식 덕분에 얼굴이 잘 나오는 점이 좋았고, token의 크기를 renormalization 해줘서 concept에 잡아먹히지 않게 하는 기법이 좋았음. remormalization은 다른 토큰들과 정도가 비슷해지도록 학습된 토큰을 normalization 해주는 기법.
+
+**ReVersion: Diffusion-Based Relation Inversion from Images**\
+*Ziqi Huang∗Tianxing Wu∗Yuming JiangKelvin C.K. ChanZiwei Liu*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2303.13495)]\
+[Submitted on 23 Mar 2023]\
+Relation Inversion이라는 개념을 소개함. CLIP embedding을 살펴보니 명사, 동사, 형용사 등등 품사별로 space가 나눠져 있는것을 관측함. 이에 관계를 나타내주는 text token을 학습을 하는데, contrastive learning으로 positive는 형용사들을, negative로 나머지 정해놓은 단어들을 사용함. 이를 통해 Exemplar Images들이 지니고 있는 관계 ex) 무언가가 어디 위에 그려져 있다던지, 안에 들어가 있다던지, 옆에 나란히 위치한다던지 이런 관계를 학습할 수 있음.
+
+**P+: Extended Textual Conditioning in Text-to-Image Generation**\
+*Andrey Voynov, Qinghao Chu, Daniel Cohen-Or, Kfir Aberman*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2303.09522)]\
+[Submitted on 16 Mar 2023]\
+토큰이 UNet의 layer별로 들어가는데, 이걸 쪼갬. StyleGAN2의 w space와 w+ space를 생각하면 되는데, 각 layer 별 prompt space를 나눠서 생각해서 P+ space라고 부름. 재밌는점은 bottleneck에 가까울수록 semantic한 의미를 지니고있고, 노이즈에 가까울수록 style이라고 해야하나.. 색깔과 관련된 그런 의미를 지님. (Asyrp과 DiffStyle과 결을 같이하는 관측) textual inversion의 확장버전으로 personalization 가능.
+
+**Score-based generative model learnmanifold-like structures with constrained mixing**\
+*Li Kevin Wenliang, Ben Moran*\
+NeurIPS 2022 Workshop. [[Paper](https://openreview.net/forum?id=eSZqaIrDLZR)]\
+score를 svd 해서 분석해본 결과 재밌게도 eigenvalue가 낮은 친구들이 semantic한 의미를 지니고 있음을 보임. 직관적으로 생각해보면 각 score들은 timestep에 맞는 distribution으로 향하는 방향이어야 하고, 이에 맞춰서 eigenvalue가 높은 방향들은 각 distirbution 밖으로 향하는 방향이라고 이해할 수 있음.
+
+**StyleDiffusion: Prompt-Embedding Inversion for Text-Based Editing**\
+*Senmao Li, Joost van de Weijer, Taihang Hu, Fahad Shahbaz Khan, Qibin Hou, Yaxing Wang, Jian Yang*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2303.15649)]\
+[Submitted on 28 Mar 2023]\
+Prompt2Prompt, texture inversion 아류인데, loss로 K와 Q가 같아지도록 loss를 추가함. 뭔가 내용이 더 있는 논문이었는데 기억이 잘...
+
+**Score-based Diffusion Models in Function Space**\
+*Jae Hyun Lim*, Nikola B. Kovachki*, Ricardo Baptista*, Christopher Beckham, Kamyar Azizzadenesheli, Jean Kossaifi, Vikram Voleti, Jiaming Song, Karsten Kreis, Jan Kautz, Christopher Pal, Arash Vahdat, Anima Anandkumar*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2302.07400)]\
+[Submitted on 14 Feb 2023]\
+꽤나 어려운 논문. 일단 간단히 말하자면 어떤 function을 생성하는 논문임. infinite dimension에서 Lebesgue measure가 불가능 하기 때문에 Radon–Nikodym Theorem을 통해 probability measure를 구함. (정확하지 않은 표현인데.. 요약이 힘드네요. 4번식 밑에 줄이 정확한 표현) 이 때 u(뮤)는 Cameron-Martin space라고 여기고 Feldman–Hájek Theorem을 적용해서 8번 식을 구함. 적다보니 요약이 불가한 논문이란 것을 깨달았고, 본인도 읽은지 몇 주 됐다고 기억이 가물가물함. 추후 업데이트 해보겠음.
+
+
+**Latent-Shift: Latent Diffusion with Temporal Shift for Efficient Text-to-Video Generation**\
+*Jie An1;2* Songyang Zhang1;2* Harry Yang2 Sonal Gupta2 Jia-Bin Huang2;3 Jiebo Luo1;2 Xi Yin2*\
+arXiv 2023. [Paper](https://arxiv.org/abs/2304.08477)] [[Project Page(https://latent-shift.github.io/)]\
+[Submitted on 17 Apr 2023]\
 T2I model로 T2V model을 학습. 4d tensor(frame x channel x width x height)를 denoising하여 video 생성, Frame 간 정보 교환을 위해 attention 대신 temporal axis로 latent feature (특정 channel만) 를 shift 하는 temporal shift block을 U-Net안에 추가.
 
-**Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation **
-*Jay Zhangjie Wu1 Yixiao Ge2 Xintao Wang2 Stan Weixian Lei1 Yuchao Gu1 Yufei Shi1 Wynne Hsu4 Ying Shan2 Xiaohu Qie3 Mike Zheng Shou1*
-arXiv 2023. [[Paper](https://arxiv.org/abs/2212.11565)][[Project page](https://tuneavideo.github.io/)]
-[Submitted on 17 Mar 2023]
+**Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation**\
+*Jay Zhangjie Wu1 Yixiao Ge2 Xintao Wang2 Stan Weixian Lei1 Yuchao Gu1 Yufei Shi1 Wynne Hsu4 Ying Shan2 Xiaohu Qie3 Mike Zheng Shou1*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2212.11565)][[Project page](https://tuneavideo.github.io/)]\
+[Submitted on 17 Mar 2023]\
 한개의 reference video 에 대하여, T2I diffusion model을 T2V diffusion model로 fine-tunning함. T2I -> T2V 만들때 self-attention을 직전 프레임과 처음 프레임을 key와 value만드는데 쓰도록 바꿈 (Spatial temporal attention) + Temporal attention block 추가(inflation).
 
-**Video-P2P: Video Editing with Cross-attention Control**
-*Shaoteng Liu1 Yuechen Zhang1 Wenbo Li1 Zhe Lin3 Jiaya Jia1;2*
-arXiv 2023. [[Paper](https://video-p2p.github.io/)] [[Project page](https://video-p2p.github.io/)]
-[Submitted on 8 Mar 2023]
+**Video-P2P: Video Editing with Cross-attention Control**\
+*Shaoteng Liu1 Yuechen Zhang1 Wenbo Li1 Zhe Lin3 Jiaya Jia1;2*\
+arXiv 2023. [[Paper](https://video-p2p.github.io/)] [[Project page](https://video-p2p.github.io/)]\
+[Submitted on 8 Mar 2023]\
 Input video 한개에 T2I->T2V fine-tunning(Tune-A-Video와 비슷한 방식), T2I -> T2V 만들때 self-attention을 처음 프레임만을 key와 value만드는데 쓰도록 바꿈 (Frame attention), decoupled-guidance attention으로 background 안바뀌고 foreground object만 editing되도록함(Mask생성)
 
-**Pix2Video: Video Editing using Image Diffusion**
-*Duygu Ceylan1* Chun-Hao P. Huang1* Niloy J. Mitra1,2*
-arXiv 2023. [[Paper](https://arxiv.org/abs/2303.12688)] [[Project page](https://duyguceylan.github.io/pix2video.github.io/)]
+**Pix2Video: Video Editing using Image Diffusion**\
+*Duygu Ceylan1* Chun-Hao P. Huang1* Niloy J. Mitra1,2*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2303.12688)] [[Project page](https://duyguceylan.github.io/pix2video.github.io/)]\
 첫 frame 부터 시작하여 이후 frame 으로 점차 propagate하는 방식으로 editing, 이전 프레임과 첫 프레임을 attend하도록 feature를 injection. flickering을 방지하기 위해 이전프레임과 현재프레임의 predicted x0 간의 l2 distance 를 비교하여 denoising할때 classifier guidance를 줌.
 
 
-**VideoFusion: Decomposed Diffusion Models for High-Quality Video Generation**
-*Zhengxiong Luo1,2,4,5 Dayou Chen2 Yingya Zhang2 †Yan Huang4,5 Liang Wang4,5 Yujun Shen3 Deli Zhao2 Jingren Zhou2 Tieniu Tan4,5,6*
-arXiv 2023. [[Paper](https://arxiv.org/pdf/2303.08320.pdf)]
-[Submitted on 22 Mar 2023]
+**VideoFusion: Decomposed Diffusion Models for High-Quality Video Generation**\
+*Zhengxiong Luo1,2,4,5 Dayou Chen2 Yingya Zhang2 †Yan Huang4,5 Liang Wang4,5 Yujun Shen3 Deli Zhao2 Jingren Zhou2 Tieniu Tan4,5,6*\
+arXiv 2023. [[Paper](https://arxiv.org/pdf/2303.08320.pdf)]\
+[Submitted on 22 Mar 2023]\
 alibaba에서 release한 text2video diffusion model의 논문, forward 할 때 frame별로 independent noise + shared noise를 섞는 것을 제안.
 
  
@@ -178,6 +215,7 @@ arXiv 2023. [[Paper](https://arxiv.org/abs/2302.03027)] \
   - [Introductory Videos](#introductory-videos)
 - [Papers](#papers)
   - [Must-read papers](#must-read-papers)
+  - [Personalized](#personalized)
   - [Stable diffusion freeze](#stable-diffusion-freeze)
   - [Stable diffusion finetuning](#stable-diffusion-finetuning)
   - [Connection with other framworks](#connection-with-other-framworks)
@@ -187,7 +225,7 @@ arXiv 2023. [[Paper](https://arxiv.org/abs/2302.03027)] \
   - [Image Editing](#image-editing)
   - [Text-focused](#text-focused)
   - [Fast Sampling](#fast-sampling)
-  - [Video Generation](#video-generation)
+  - [Video Generation and Editing](#video-generation-and-editing)
   - [3D](#3d)
   - [수학기반향상](#수학기반향상)
   - [기타](#기타)
@@ -299,6 +337,17 @@ arXiv 2022. [[Paper](https://arxiv.org/abs/2206.00364)] \
 NeurIPS Workshop 2021. [[Paper](https://arxiv.org/abs/2207.12598)] \
 28 Sep 2021 \
 GAN으로 치면 condition GAN. 외부에서 classifier로 guidance를 주는 대신, UNet에 바로 컨디션을 꽂아줌. 이 때 수식을 classifier guidance랑 같아지도록 전개, 잘 됨. 현재 잘 되는 대부분의 모델들은 free guidance 방식으로 학습됨.
+
+## Personalized
+
+
+**InstantBooth: Personalized Text-to-Image Generation without Test-Time Finetuning**\
+*Jing Shi, Wei Xiong, Zhe Lin, Hyun Joon Jung*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2304.03411)]\
+[Submitted on 6 Apr 2023]\
+1.texture inversion 처럼 토큰 하나 만들어주는 encoder를 학습시킴. 2. 이미지를 패치로 쪼개서 패치별 feature를 모아서 concat함. 3. cross att와 self att 사이에 adapter를 하나 넣어서 이미지를 생성함. 이 3단계로 personalize하는 논문. 개인적으로 패치단위로 쪼개서 feature를 뽑는 방식 덕분에 얼굴이 잘 나오는 점이 좋았고, token의 크기를 renormalization 해줘서 concept에 잡아먹히지 않게 하는 기법이 좋았음. remormalization은 다른 토큰들과 정도가 비슷해지도록 학습된 토큰을 normalization 해주는 기법.
+
+
 
 ## Stable Diffusion Freeze
 
@@ -635,6 +684,24 @@ arXiv 2022. ICLR2023 submission [[Paper](https://arxiv.org/abs/2208.01618)] \
 [Submitted on 2 Aug 2022] \
 이미지 3~5장을 S* 라는 문자로 inversion한다. GAN inversion과 유사. 이미지를 생성하는 과정에서 나오는 노이즈와 given image를 inversion 하는 과정에서 나오는 노이즈간의 MSE loss를 사용하여 "A photo of S*" 라는 prompt의 S*에 해당하는 토큰을 직접 optimize한다.
 
+**ReVersion: Diffusion-Based Relation Inversion from Images**\
+*Ziqi Huang∗Tianxing Wu∗Yuming JiangKelvin C.K. ChanZiwei Liu*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2303.13495)]\
+[Submitted on 23 Mar 2023]\
+Relation Inversion이라는 개념을 소개함. CLIP embedding을 살펴보니 명사, 동사, 형용사 등등 품사별로 space가 나눠져 있는것을 관측함. 이에 관계를 나타내주는 text token을 학습을 하는데, contrastive learning으로 positive는 형용사들을, negative로 나머지 정해놓은 단어들을 사용함. 이를 통해 Exemplar Images들이 지니고 있는 관계 ex) 무언가가 어디 위에 그려져 있다던지, 안에 들어가 있다던지, 옆에 나란히 위치한다던지 이런 관계를 학습할 수 있음.
+
+**P+: Extended Textual Conditioning in Text-to-Image Generation**\
+*Andrey Voynov, Qinghao Chu, Daniel Cohen-Or, Kfir Aberman*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2303.09522)]\
+[Submitted on 16 Mar 2023]\
+토큰이 UNet의 layer별로 들어가는데, 이걸 쪼갬. StyleGAN2의 w space와 w+ space를 생각하면 되는데, 각 layer 별 prompt space를 나눠서 생각해서 P+ space라고 부름. 재밌는점은 bottleneck에 가까울수록 semantic한 의미를 지니고있고, 노이즈에 가까울수록 style이라고 해야하나.. 색깔과 관련된 그런 의미를 지님. (Asyrp과 DiffStyle과 결을 같이하는 관측) textual inversion의 확장버전으로 personalization 가능.
+
+**StyleDiffusion: Prompt-Embedding Inversion for Text-Based Editing**\
+*Senmao Li, Joost van de Weijer, Taihang Hu, Fahad Shahbaz Khan, Qibin Hou, Yaxing Wang, Jian Yang*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2303.15649)]\
+[Submitted on 28 Mar 2023]\
+Prompt2Prompt, texture inversion 아류인데, loss로 K와 Q가 같아지도록 loss를 추가함. 뭔가 내용이 더 있는 논문이었는데 기억이 잘...
+
 
 ## Fast Sampling
 
@@ -675,7 +742,7 @@ ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2206.05564)] \
 [Submitted on 11 Jun 2022] \
 DDPM, DDIM, 등등을 모두 SDE의 형태로 전환, Blur Diffusion이나 Critically-Damped Langevin Diffusion 까지도 SDE로 표현한 뒤, general한 form의 SDE -> DDIM을 만드는 방법을 제안한다. 이를 통해 istropic diffusion models까지 DDIM으로 fast sampling 가능하게 함. 
 
-## Video Generation & Editing
+## Video Generation and Editing
 
 **Video Diffusion Models** \
 *Jonathan Ho, Tim Salimans, Alexey Gritsenko, William Chan, Mohammad Norouzi, David Fleet* \
@@ -756,6 +823,18 @@ arXiv 2023. [[Paper](https://arxiv.org/abs/2302.10688)] [[Code](https://github.c
 [Submitted on 21 Feb 2023]\
 모델의 아웃풋인 스코어도 마팅게일을 만족해야 한다고 주장한다. SDE식을 만족한다는 것은 xt가 마팅게일이라는 의미이기도 한데, 직접적으로 스코어가 마팅게일이어야 한다고 말한 논문은 이게 처음인 듯 하다. 조금 어렵다.
 
+**Score-based generative model learnmanifold-like structures with constrained mixing**\
+*Li Kevin Wenliang, Ben Moran*\
+NeurIPS 2022 Workshop. [[Paper](https://openreview.net/forum?id=eSZqaIrDLZR)]\
+score를 svd 해서 분석해본 결과 재밌게도 eigenvalue가 낮은 친구들이 semantic한 의미를 지니고 있음을 보임. 직관적으로 생각해보면 각 score들은 timestep에 맞는 distribution으로 향하는 방향이어야 하고, 이에 맞춰서 eigenvalue가 높은 방향들은 각 distirbution 밖으로 향하는 방향이라고 이해할 수 있음.
+
+**Score-based Diffusion Models in Function Space**\
+*Jae Hyun Lim*, Nikola B. Kovachki*, Ricardo Baptista*, Christopher Beckham, Kamyar Azizzadenesheli, Jean Kossaifi, Vikram Voleti, Jiaming Song, Karsten Kreis, Jan Kautz, Christopher Pal, Arash Vahdat, Anima Anandkumar*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2302.07400)]\
+[Submitted on 14 Feb 2023]\
+꽤나 어려운 논문. 일단 간단히 말하자면 어떤 function을 생성하는 논문임. infinite dimension에서 Lebesgue measure가 불가능 하기 때문에 Radon–Nikodym Theorem을 통해 probability measure를 구함. (정확하지 않은 표현인데.. 요약이 힘드네요. 4번식 밑에 줄이 정확한 표현) 이 때 u(뮤)는 Cameron-Martin space라고 여기고 Feldman–Hájek Theorem을 적용해서 8번 식을 구함. 적다보니 요약이 불가한 논문이란 것을 깨달았고, 본인도 읽은지 몇 주 됐다고 기억이 가물가물함. 추후 업데이트 해보겠음.
+
+
 ## 기타
 
 **Human Motion Diffusion Model** \
@@ -769,6 +848,15 @@ arXiv 2022. [[Paper](https://arxiv.org/abs/2209.14916)][[Project page](https://g
 arXiv 2022. [[Paper](https://arxiv.org/abs/2212.02500)] \
 [Submitted on 5 Dec 2022] \
 Motion Diffusion Model에서 발이 떨어지는 문제를 해결하기 위해 강화학습을 사용함. 자세한건 패스..
+
+**Score-based Diffusion Models in Function Space**\
+*Jae Hyun Lim*, Nikola B. Kovachki*, Ricardo Baptista*, Christopher Beckham, Kamyar Azizzadenesheli, Jean Kossaifi, Vikram Voleti, Jiaming Song, Karsten Kreis, Jan Kautz, Christopher Pal, Arash Vahdat, Anima Anandkumar*\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2302.07400)]\
+[Submitted on 14 Feb 2023]\
+꽤나 어려운 논문. 일단 간단히 말하자면 어떤 function을 생성하는 논문임. infinite dimension에서 Lebesgue measure가 불가능 하기 때문에 Radon–Nikodym Theorem을 통해 probability measure를 구함. (정확하지 않은 표현인데.. 요약이 힘드네요. 4번식 밑에 줄이 정확한 표현) 이 때 u(뮤)는 Cameron-Martin space라고 여기고 Feldman–Hájek Theorem을 적용해서 8번 식을 구함. 적다보니 요약이 불가한 논문이란 것을 깨달았고, 본인도 읽은지 몇 주 됐다고 기억이 가물가물함. 추후 업데이트 해보겠음.
+
+
+
 
 ## 읽을것들
 
