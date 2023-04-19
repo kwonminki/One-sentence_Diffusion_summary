@@ -574,6 +574,13 @@ text-conditional 일때나 guidance scale 이 클때도 reconstruction 성능이
   [Submitted on 16 Feb 2023]\
   Asyrp을 사용하면 (Diffusion models already have a semantic latent space) 생기는 문제를 inversion 이미지와 generated 이미지의 xT 분포를 가지고 분석함. inversion한 이미지가 가우시안 분포 껍질 안쪽에 있다고 말하고, 이걸 맞춰주는 방식을 제안함. - 제대로 안읽어서 추후 업데이트 예정.
   
+  
+  **MasaCtrl: Tuning-Free Mutual Self-Attention Control for Consistent Image Synthesis and Editing** \
+* Mingdeng Cao, Xintao Wang, Zhongang Qi, Ying Shan, Xiaohu Qie, Yinqiang Zheng *\
+arXiv 2023. [[Paper](https://arxiv.org/abs/2304.08465)]\
+[Submitted on 17 Apr 2023] \
+Plug&play upgrade version, code 공개가 안되어있긴하지만 논문 figure보면 결과가 이상적. reference image 로 부터 가져온 self attention key, value를 editing 과정에서 사용할 때, 처음부터 쓰면 editing flexibility가 떨어지기 때문에, 일정 step 이후부터 쓰기를 제안 + cross attention 으로 부터 object와 background mask를 얻어서 self-attention guide에 사용.
+
 
 ## Text-focused
 
@@ -635,7 +642,7 @@ ICLR 2023 Submission / preprint [[Paper](https://arxiv.org/abs/2206.05564)] \
 [Submitted on 11 Jun 2022] \
 DDPM, DDIM, 등등을 모두 SDE의 형태로 전환, Blur Diffusion이나 Critically-Damped Langevin Diffusion 까지도 SDE로 표현한 뒤, general한 form의 SDE -> DDIM을 만드는 방법을 제안한다. 이를 통해 istropic diffusion models까지 DDIM으로 fast sampling 가능하게 함. 
 
-## Video Generation
+## Video Generation & Editing
 
 **Video Diffusion Models** \
 *Jonathan Ho, Tim Salimans, Alexey Gritsenko, William Chan, Mohammad Norouzi, David Fleet* \
@@ -654,6 +661,39 @@ Diffusion을 이용한 Video generation을 처음으로 한 논문, Video의 길
   arXiv 2023. [[Paper](https://arxiv.org/abs/2211.11018)] [[Project Page](https://magicvideo.github.io/#)]\
   [Submitted on 20 Nov 2022]\
   비디오를 가지고 훈련시키는 데, adaptor 라는 개념을 추가하여, frame 간의 관계 정보를 공유하도록 한다. 이 때 Directed Temporal Attention 을 사용해서 - Masked Self attention과 거의 동일한 개념.- 뒤쪽 frame에게만 영향을 끼치도록 만듬. 나쁘지 않은 논문.
+  
+**Latent-Shift: Latent Diffusion with Temporal Shift for Efficient Text-to-Video Generation **
+*Jie An1;2* Songyang Zhang1;2* Harry Yang2 Sonal Gupta2 Jia-Bin Huang2;3 Jiebo Luo1;2 Xi Yin2*
+arXiv 2023. [Paper](https://arxiv.org/pdf/2304.08477.pdf)] [[Project Page(https://latent-shift.github.io/)]
+[Submitted on 17 Apr 2023]
+T2I model로 T2V model을 학습. 4d tensor(frame x channel x width x height)를 denoising하여 video 생성, Frame 간 정보 교환을 위해 attention 대신 temporal axis로 latent feature (특정 channel만) 를 shift 하는 temporal shift block을 U-Net안에 추가.
+
+**Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation **
+*Jay Zhangjie Wu1 Yixiao Ge2 Xintao Wang2 Stan Weixian Lei1 Yuchao Gu1 Yufei Shi1 Wynne Hsu4 Ying Shan2 Xiaohu Qie3 Mike Zheng Shou1*
+arXiv 2023. [[Paper](https://arxiv.org/abs/2212.11565)][[Project page](https://tuneavideo.github.io/)]
+[Submitted on 17 Mar 2023]
+한개의 reference video 에 대하여, T2I diffusion model을 T2V diffusion model로 fine-tunning함. T2I -> T2V 만들때 self-attention을 직전 프레임과 처음 프레임을 key와 value만드는데 쓰도록 바꿈 (Spatial temporal attention) + Temporal attention block 추가(inflation).
+
+**Video-P2P: Video Editing with Cross-attention Control**
+*Shaoteng Liu1 Yuechen Zhang1 Wenbo Li1 Zhe Lin3 Jiaya Jia1;2*
+arXiv 2023. [[Paper](https://video-p2p.github.io/)] [[Project page](https://video-p2p.github.io/)]
+[Submitted on 8 Mar 2023]
+Input video 한개에 T2I->T2V fine-tunning(Tune-A-Video와 비슷한 방식), T2I -> T2V 만들때 self-attention을 처음 프레임만을 key와 value만드는데 쓰도록 바꿈 (Frame attention), decoupled-guidance attention으로 background 안바뀌고 foreground object만 editing되도록함(Mask생성)
+
+**Pix2Video: Video Editing using Image Diffusion**
+*Duygu Ceylan1* Chun-Hao P. Huang1* Niloy J. Mitra1,2*
+arXiv 2023. [[Paper](https://arxiv.org/abs/2303.12688)] [[Project page](https://duyguceylan.github.io/pix2video.github.io/)]
+첫 frame 부터 시작하여 이후 frame 으로 점차 propagate하는 방식으로 editing, 이전 프레임과 첫 프레임을 attend하도록 feature를 injection. flickering을 방지하기 위해 이전프레임과 현재프레임의 predicted x0 간의 l2 distance 를 비교하여 denoising할때 classifier guidance를 줌.
+
+
+**VideoFusion: Decomposed Diffusion Models for High-Quality Video Generation**
+*Zhengxiong Luo1,2,4,5 Dayou Chen2 Yingya Zhang2 †Yan Huang4,5 Liang Wang4,5 Yujun Shen3 Deli Zhao2 Jingren Zhou2 Tieniu Tan4,5,6*
+arXiv 2023. [[Paper](https://arxiv.org/pdf/2303.08320.pdf)]
+[Submitted on 22 Mar 2023]
+alibaba에서 release한 text2video diffusion model의 논문, forward 할 때 frame별로 independent noise + shared noise를 섞는 것을 제안.
+
+
+
 
 ## 3D
 
