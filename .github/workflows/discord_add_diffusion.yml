@@ -30,7 +30,7 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_DIFFUSION }}
         uses: Ilshidur/action-discord@master
         with:
-          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been updated.'
+          args: '{{ EVENT_PAYLOAD.repository.full_name }} has been updated. https://github.com/kwonminki/One-sentence_Diffusion_summary'
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
