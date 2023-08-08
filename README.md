@@ -20,20 +20,20 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 *Thao Nguyen, Yuheng Li, Utkarsh Ojha, Yong Jae Lee* \ 
 arXiv 2023. [[Paper](https://arxiv.org/abs/2307.14331)]\
 [Submitted on 8 26 Jul 2023]
-TBD
+Visual Example Image E->E’ 가 주어지면 E->E’ 로 edit 하는 prompt instruction cT 를 optimization함. 이때 clip space 상에서 instruction cT direction과 clip_encoder(E’) - clip_encoder(E) 가 유사하도록 (cos similarity) loss를 추가함.  
 
 **ImageBrush: Learning Visual In-Context Instructions for Exemplar-Based Image Manipulation** \
 *Yasheng Sun, Yifan Yang, Houwen Peng, Yifei Shen, Yuqing Yang, Han Hu, Lili Qiu, Hideki Koike* \
 arXiv 2023. [[Paper](https://arxiv.org/abs/2308.00906)]
 [Submitted on 2 Aug 2023]
-TBD
+Visual Example Image E->E’ 가 주어지면 E->E’ 로 edit하는 work.  훈련을 위한  Visual example image [E,E’]  pairs 로 visual encoder, prompt encoder, position mlp layer 학습.
 
 **Diffusion Image Analogies** \
-**
+*Šubrtová et al*
 SIGGRAPH 2023. [[Project page](https://dcgi.fel.cvut.cz/home/sykorad/dia)]\
-TBD
+Visual Example Image E->E’의 clip space 상 의 direction을 구하고, I->I’ 를 editing 하는 과정에서 text embedding 에 더해줌.
 
-**
+
  ### 19 Apr. 2023
 
 **InstantBooth: Personalized Text-to-Image Generation without Test-Time Finetuning**\
