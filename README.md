@@ -14,7 +14,26 @@ Discord : https://discord.gg/7Wt8DqpsPU  (A message will be sent when updated)
 
 <details>
   <summary>In the last month</summary>
-  
+
+### 8 Aug. 2023
+**Visual Instruction Inversion: Image Editing via Visual Prompting** \
+*Thao Nguyen, Yuheng Li, Utkarsh Ojha, Yong Jae Lee* \ 
+arXiv 2023. [[Paper](https://arxiv.org/abs/2307.14331)]\
+[Submitted on 8 26 Jul 2023]
+TBD
+
+**ImageBrush: Learning Visual In-Context Instructions for Exemplar-Based Image Manipulation** \
+*Yasheng Sun, Yifan Yang, Houwen Peng, Yifei Shen, Yuqing Yang, Han Hu, Lili Qiu, Hideki Koike* \
+arXiv 2023. [[Paper](https://arxiv.org/abs/2308.00906)]
+[Submitted on 2 Aug 2023]
+TBD
+
+**Diffusion Image Analogies** \
+**
+SIGGRAPH 2023. [[Project page](https://dcgi.fel.cvut.cz/home/sykorad/dia)]\
+TBD
+
+**
  ### 19 Apr. 2023
 
 **InstantBooth: Personalized Text-to-Image Generation without Test-Time Finetuning**\
